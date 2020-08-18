@@ -1,0 +1,149 @@
+{% extends "layout.html" %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/step-by-step-nav.js"></script>
+  <script type="text/javascript">
+    var $element = $('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+    stepByStepNavigation.start($element)
+  </script>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{serviceName}}
+      </h1>
+
+      <p>
+        This tool will guide you through the process of buying goods and services for schools in the UK. We recommend that you work though each section in turn.
+      </p>
+
+      <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
+        <ol class="app-step-nav__steps">
+          <li class="app-step-nav__step js-step" id="get-the-right-support-with-buying" >
+            <div class="app-step-nav__header js-toggle-panel" data-position="1">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden">Step</span> 1
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Get the right support with buying
+                </span>
+              </h2>
+            </div>
+
+            <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-get-the-right-support-with-buying">
+              <p class="app-step-nav__paragraph">Identify the category of the service/goods that you want to buy and the level of support that you may need.</p>
+
+              <ol class="app-step-nav__list " data-length="3">
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="1.1" class="app-step-nav__link js-link" href="support-start-page.html">Identify the level of support you need for what you're buying</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+
+          <li class="app-step-nav__step js-step" id="gather-information-on-what-youre-buying" >
+            <div class="app-step-nav__header js-toggle-panel" data-position="2">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden">Step</span> 2
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Gather information on what you're buying
+                </span>
+              </h2>
+            </div>
+
+            <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-gather-information-on-what-youre-buying">
+              <p class="app-step-nav__paragraph">Gather key information and school requirements for what you're buying and use that to generate a draft specification that can be used in the tender process.
+                  You can  also see what other schools are spending on similar things.
+              </p>
+              <ol class="app-step-nav__list" data-length="1">
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="2.1" class="app-step-nav__link js-link" href="#">Define your requirements to build a draft specification<span class="app-step-nav__context">context about stuff</span></a>
+                </li>
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="2.2" class="app-step-nav__link js-link" href="#">See what other schools are spending<span class="app-step-nav__context">context goes here</span></a>
+                </li>
+              </ol>
+            </div>
+          </li>
+
+          <li class="app-step-nav__step js-step" id="connect-with-suppliers" >
+            <div class="app-step-nav__header js-toggle-panel" data-position="3">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden">Step</span> 3
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Connect with suppliers
+                </span>
+              </h2>
+            </div>
+
+            <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-connect-with-suppliers">
+              <p class="app-step-nav__paragraph">Answer questions to work out the best way to get your specification to suppliers. Then invite them to bid on your specification.</p>
+
+              <ol class="app-step-nav__list " data-length="4">
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="3.1" class="app-step-nav__link js-link" href="#">Guidance on the different routes to market</a>
+                </li>
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="3.2" class="app-step-nav__link js-link" href="#">Identify the route to market and connect with suppliers</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+
+          <li class="app-step-nav__step js-step" id="manage-tenders" >
+            <div class="app-step-nav__header js-toggle-panel" data-position="4">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden">Step</span> 4
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Manage tenders
+                </span>
+              </h2>
+            </div>
+
+            <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-manage-tenders">
+              <ol class="app-step-nav__list " data-length="3">
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="4.1" class="app-step-nav__link js-link" href="#">Some content that we have not written</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
