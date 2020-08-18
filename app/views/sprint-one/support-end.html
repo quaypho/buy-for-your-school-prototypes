@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  {% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+      {{serviceName}}
+    </h1>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Go to the next step with support"
+      }) }}
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body">Based on your answers we think you would benefit from support with your procurement.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">We recommend that you read some more guidance on procuring catering services.</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#" class="govuk-link">procuring catering services from small and medium sized enterprises</a></li>
+        <li><a href="#" class="govuk-link">procuring catering services from local authorities</a></li>
+      </ul>
+
+      <a href="step-by-step" role="button" draggable="false" class="govuk-button">
+        Save and continue later
+      </a>
+    </div>
+  </div>
+
+{% endblock %}
