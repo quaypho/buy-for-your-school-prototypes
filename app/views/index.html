@@ -1,41 +1,45 @@
 
 {% extends "layout.html" %}
 
-{% block pageTitle %}
-  GOV.UK Prototype Kit
-{% endblock %}
-
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+      <h1 class="govuk-heading-xl">Prototypes for "{{serviceName}}"</h1>
+    </div>
+  </div>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+  <h2 class="govuk-heading-l">Alpha prototypes</h2>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m">9 July 2020</span>
+      <h3 class="govuk-heading-m">Sprint 1</h3>
 
-      <h2 class="govuk-heading-m">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <ul class="govuk-list">
         <li>
-          <a href="/docs/tutorials-and-examples">Example pages and documentation</a>
+          <a href="sprint-one/step-by-step" class="govuk-link">{{serviceName}}</a>
         </li>
+      </ul>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What's new?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Use a step by step page to show users that this is part of a larger end-to-end journey</li>
+            <li>Help users identify their category of spend</li>
+            <li>Help users identify the level of support that they may need</li>
+            <li>Gather the requirements and needs to be able to support users creating a specification</li>
+          </ul>
+        </div>
+      </details>
+      <h4 class="govuk-heading-s govuk-!-margin-bottom-1">User Research</h4>
+      <ul class="govuk-list">
         <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
+          <a href="https://miro.com/app/board/o9J_kpAMt-Y=/" class="govuk-link" target="_blank">Feedback</a>
         </li>
       </ul>
     </div>

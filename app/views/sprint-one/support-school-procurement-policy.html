@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="support-confidence-regulations">
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "has-procurement-policy",
+          name: "has-procurement-policy",
+          fieldset: {
+            legend: {
+              text: "Does your school have its own procurement policy for buying catering services?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "For example, this might say who needs to be involved in the procurement process and when. It may highlight practical and legal considerations that can affect your procurement."
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "Yes, but I am not experienced with it",
+              text: "Yes, but I am not experienced with it"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+        govukButton({
+          text: "Continue",
+          preventDoubleClick: true
+        })
+      }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

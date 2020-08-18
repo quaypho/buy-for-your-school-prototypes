@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+      {{serviceName}}
+    </h1>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Overview</h2>
+      <p class="govuk-body">Get the right level of support you need to buy goods and services for your school.</p>
+      <p class="govuk-body">By telling us about your experience and confidence levels in buying the goods or service, we will tailor the guidance that will be shown to you on screen.</p>
+      <p class="govuk-body">More guidance will be shown if you need more support. For  experienced buyers, the guidance will be hidden, but will be accessible to you within each page if you need it.</p>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p class="govuk-body">Consider:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>any previous experience in buying the goods or services you need</li>
+        <li>your level of understanding of the procurement process</li>
+        <li>your school's procurement policy</li>
+        <li>support you have access to in your school</li>
+        <li>information on the current contract</li>
+      </ul>
+
+      <p class="govuk-body">It will take around 3 minutes to complete the process</p>
+
+      <h2 class="govuk-heading-m">More information</h2>
+
+      <p class="govuk-body">Read guidance on:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#" class="govuk-link">buying for schools</a></li>
+        <li><a href="#" class="govuk-link">buying procedures and procurement law (including EU procurement law)</a></li>
+      </ul>
+
+      <a href="support-what-are-you-buying" role="button" draggable="false" class="govuk-button govuk-button--start">
+        Continue
+      </a>
+    </div>
+  </div>
+
+{% endblock %}

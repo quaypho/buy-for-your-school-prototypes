@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="support-confidence-level">
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "what-facilities-service",
+          name: "what-facilities-service",
+          fieldset: {
+            legend: {
+              text: "What service are you looking for in facilities management and estates?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Catering",
+              text: "Catering"
+            },
+            {
+              value: "Cleaning",
+              text: "Cleaning"
+            },
+            {
+              value: "Construction consultancy",
+              text: "Construction consultancy"
+            },
+            {
+              value: "Heating systems and renewable technology",
+              text: "Heating systems and renewable technology"
+            },
+            {
+              value: "Removal and relocation",
+              text: "Removal and relocation"
+            },
+            {
+              value: "Total facilities management",
+              text: "Total facilities management"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+        govukButton({
+          text: "Continue",
+          preventDoubleClick: true
+        })
+      }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
