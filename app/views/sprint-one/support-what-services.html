@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="repaying-loan">
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "what-service",
+          name: "what-service",
+          fieldset: {
+            legend: {
+              text: "What service do you need?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Consultancy services",
+              text: "Consultancy services"
+            },
+            {
+              value: "Energy and utilities",
+              text: "Energy and utilities"
+            },
+            {
+              value: "Facilities management and estates",
+              text: "Facilities management and estates"
+            },
+            {
+              value: "Financial",
+              text: "Financial"
+            },
+            {
+              value: "ICT",
+              text: "ICT"
+            },
+            {
+              value: "Legal",
+              text: "Legal"
+            },
+            {
+              value: "Recruitment and human resources",
+              text: "Recruitment and human resources"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+        govukButton({
+          text: "Continue",
+          preventDoubleClick: true
+        })
+      }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
