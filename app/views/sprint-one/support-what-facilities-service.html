@@ -4,47 +4,43 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="POST" action="support-what-facilities-service">
+      <form method="POST" action="support-confidence-level">
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          idPrefix: "what-service",
-          name: "what-service",
+          idPrefix: "what-facilities-service",
+          name: "what-facilities-service",
           fieldset: {
             legend: {
-              text: "What service do you need?",
+              text: "What service are you looking for in facilities management and estates?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
             {
-              value: "Consultancy services",
-              text: "Consultancy services"
+              value: "Catering",
+              text: "Catering"
             },
             {
-              value: "Energy and utilities",
-              text: "Energy and utilities"
+              value: "Cleaning",
+              text: "Cleaning"
             },
             {
-              value: "Facilities management and estates",
-              text: "Facilities management and estates"
+              value: "Construction consultancy",
+              text: "Construction consultancy"
             },
             {
-              value: "Financial",
-              text: "Financial"
+              value: "Heating systems and renewable technology",
+              text: "Heating systems and renewable technology"
             },
             {
-              value: "ICT",
-              text: "ICT"
+              value: "Removal and relocation",
+              text: "Removal and relocation"
             },
             {
-              value: "Legal",
-              text: "Legal"
-            },
-            {
-              value: "Recruitment and human resources",
-              text: "Recruitment and human resources"
+              value: "Total facilities management",
+              text: "Total facilities management"
             }
           ]
         }) }}
