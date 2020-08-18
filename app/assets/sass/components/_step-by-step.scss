@@ -1,0 +1,15 @@
+.govuk-header__step-by-step{
+  background-color: govuk-colour("light-grey");
+  padding: govuk-spacing(2);
+  box-sizing: border-box;
+
+  .govuk-heading-m{
+      margin-bottom: 0;
+    }
+
+  .govuk-caption-m{
+    color: govuk-colour("black");
+  }
+}
+
+
