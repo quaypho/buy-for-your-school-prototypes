@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="repaying-loan">
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "buying-confidence-level",
+          name: "buying-confidence-level",
+          fieldset: {
+            legend: {
+              text: "How confident are you buying catering services?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Think about any previous experience in buying this service and if you will have any support in your school."
+          },
+          items: [
+            {
+              value: "Very confident",
+              text: "Very confident"
+            },
+            {
+              value: "Somewhat confident",
+              text: "Somewhat confident"
+            },
+            {
+              value: "Neither confident nor unconfident",
+              text: "Neither confident nor unconfident"
+            },
+            {
+              value: "Somewhat unconfident",
+              text: "Somewhat unconfident"
+            },
+            {
+              value: "Very unconfident",
+              text: "Very unconfident"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          preventDoubleClick: true
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
