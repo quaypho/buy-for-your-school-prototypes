@@ -4,31 +4,35 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="POST" action="gather-info-check-your-answers">
+      <form method="POST" action="gather-info-facilities-available">
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
       {{ govukCheckboxes({
-        idPrefix: "order-food",
-        name: "order-food",
+        idPrefix: "additional-selling",
+        name: "additional-selling",
         fieldset: {
           legend: {
-            text: "How do you want meals be ordered?",
+            text: "What additional products can suppliers sell?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
         },
         items: [
           {
-            value: "Pre-booked online",
-            text: "Pre-booked online"
+            value: "Fruit",
+            text: "Fruit"
           },
           {
-            value: "Pre-booked in school at the beginning of the day",
-            text: "Pre-booked in school at the beginning of the day"
+            value: "Crisps",
+            text: "Crisps"
           },
           {
-            value: "Face to face at serving time",
-            text: "Face to face at serving time"
+            value: "Confectionary",
+            text: "Confectionary"
+          },
+          {
+            value: "Coloured fizzy drinks",
+            text: "Coloured fizzy drinks"
           }
         ]
       }) }}

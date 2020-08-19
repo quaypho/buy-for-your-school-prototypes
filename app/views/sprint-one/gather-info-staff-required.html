@@ -4,31 +4,29 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="POST" action="gather-info-check-your-answers">
+      <form method="POST" action="gather-info-number-of-pupils">
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
-      {{ govukCheckboxes({
-        idPrefix: "order-food",
-        name: "order-food",
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "staff-required",
+        name: "staff-required",
         fieldset: {
           legend: {
-            text: "How do you want meals be ordered?",
+            text: "Do you want the supplier to provide catering staff?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
         },
         items: [
           {
-            value: "Pre-booked online",
-            text: "Pre-booked online"
+            value: "Yes",
+            text: "Yes"
           },
           {
-            value: "Pre-booked in school at the beginning of the day",
-            text: "Pre-booked in school at the beginning of the day"
-          },
-          {
-            value: "Face to face at serving time",
-            text: "Face to face at serving time"
+            value: "No",
+            text: "No"
           }
         ]
       }) }}
