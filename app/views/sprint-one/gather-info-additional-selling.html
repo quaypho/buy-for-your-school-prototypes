@@ -1,0 +1,56 @@
+{% extends "layout-gather-info.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="gather-info-check-your-answers">
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        idPrefix: "additional-selling",
+        name: "additional-selling",
+        fieldset: {
+          legend: {
+            text: "What additional products can suppliers sell?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Fruit",
+            text: "Fruit"
+          },
+          {
+            value: "Crisps",
+            text: "Crisps"
+          },
+          {
+            value: "Confectionary",
+            text: "Confectionary"
+          },
+          {
+            value: "Coloured fizzy drinks",
+            text: "Coloured fizzy drinks"
+          }
+        ]
+      }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+          govukButton({
+            text: "Continue",
+            preventDoubleClick: true
+          })
+        }}
+        {{ govukButton({
+          text: "Save and continue later",
+          classes: "govuk-button--secondary"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
