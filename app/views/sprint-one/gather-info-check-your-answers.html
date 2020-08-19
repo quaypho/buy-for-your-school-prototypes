@@ -6,7 +6,7 @@
 
         <h1 class="govuk-heading-l">Check your answers</h1>
 
-        <h2 class="govuk-heading-m">Section 1 name</h2>
+        <h2 class="govuk-heading-m">Submitting tenders</h2>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -24,6 +24,121 @@
           </div>
         </dl>
 
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Will you accept bids by post?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["how-contacted"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> Will you accept bids by post?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        {% if data['tender-addess'] %}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What address should tender bids be sent to?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["tender-addess"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> What address should tender bids be sent to??</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+        {% endif %}
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What does the current catering supplier offer?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["current-supplier-offer"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> What does the current catering supplier offer?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              When does the tender need to be submitted?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["tender-date"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> When does the tender need to be submitted?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Meal requirements</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What meals need to be provided?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["meals-required"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> What meals need to be provided?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What special dietary requirements need to be met?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["dietary-requirements"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> What special dietary requirements need to be met?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How do you want meals be ordered?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["order-food"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> How do you want meals be ordered?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
         <a href="support-end" role="button" draggable="false" class="govuk-button">
           Continue
