@@ -4,18 +4,23 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="POST" action="gather-info-tender-post">
-      {% from "govuk/components/input/macro.njk" import govukInput %}
+      <form method="POST" action="gather-info-meals-required">
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
-        {{ govukInput({
-          label: {
-            text: "What email address should be used for receiving bids for tender?",
-            classes: "govuk-label--l",
-            isPageHeading: true
-          },
-          id: "tender-email",
-          name: "tender-email"
-        }) }}
+      {{ govukDateInput({
+        id: "tender-date",
+        namePrefix: "tender-date",
+        fieldset: {
+          legend: {
+            text: "When does the tender need to be submitted?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "For example, 12 11 2022"
+        }
+      }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
 
