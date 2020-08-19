@@ -4,35 +4,43 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="POST" action="gather-info-facilities-available">
+      <form method="POST" action="gather-info-check-your-answers">
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
       {{ govukCheckboxes({
-        idPrefix: "additional-selling",
-        name: "additional-selling",
+        idPrefix: "facilities-available",
+        name: "facilities-available",
         fieldset: {
           legend: {
-            text: "What additional products can suppliers sell?",
+            text: "What facilities will be available to the supplier?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
         },
         items: [
           {
-            value: "Fruit",
-            text: "Fruit"
+            value: "Dedicated kitchen",
+            text: "Dedicated kitchen"
           },
           {
-            value: "Crisps",
-            text: "Crisps"
+            value: "Shared kitchen",
+            text: "Shared kitchen"
           },
           {
-            value: "Confectionary",
-            text: "Confectionary"
+            value: "Dedicated dining area",
+            text: "Dedicated dining area"
           },
           {
-            value: "Coloured fizzy drinks",
-            text: "Coloured fizzy drinks"
+            value: "Shared dining area",
+            text: "Shared dining area"
+          },
+          {
+            value: "Heavy equipment such as cooking or refrigeration equipment",
+            text: "Heavy equipment such as cooking or refrigeration equipment"
+          },
+          {
+            value: "Light equipment such as plates and cutlery",
+            text: "Light equipment such as plates and cutlery"
           }
         ]
       }) }}
