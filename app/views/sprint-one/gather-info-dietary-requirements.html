@@ -4,35 +4,43 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="POST" action="gather-info-dietary-requirements">
+      <form method="POST" action="gather-info-check-your-answers">
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
       {{ govukCheckboxes({
-        idPrefix: "meals-required",
-        name: "meals-required",
+        idPrefix: "dietary-requirements",
+        name: "dietary-requirements",
         fieldset: {
           legend: {
-            text: "What meals need to be provided?",
+            text: "What special dietary requirements need to be met?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
         },
         items: [
           {
-            value: "Breakfast club",
-            text: "Breakfast club"
+            value: "Celiac",
+            text: "Celiac"
           },
           {
-            value: "Mid-morning snacks",
-            text: "Mid-morning snacks"
+            value: "Diabetic",
+            text: "Diabetic"
           },
           {
-            value: "Mid-day meal",
-            text: "Mid-day meal"
+            value: "Egg free",
+            text: "Egg free"
           },
           {
-            value: "After school club snacks",
-            text: "After school club snacks"
+            value: "Halal",
+            text: "Halal"
+          },
+          {
+            value: "Kosher",
+            text: "Kosher"
+          },
+          {
+            value: "Vegan",
+            text: "Vegan"
           }
         ]
       }) }}
