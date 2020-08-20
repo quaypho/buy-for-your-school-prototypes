@@ -1,0 +1,42 @@
+{% extends "layout-support.html" %}
+
+{% block content %}
+
+  {% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Your specification has been created"
+      }) }}
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">Your answers have been used to build a specification
+        document which can be used to run the tendering process. <a href="https://docs.google.com/document/d/1f0fUdCZyf98jnktzQ845KA7ykMMWHPV70CruuDqcBFQ/edit?usp=sharing" class="govuk-link">
+        Download a copy of your editable specification</a>.
+      </p>
+
+      <p class="govuk-body">For more support on refining your specification:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#" class="govuk-link">join a school business professional network for peer-to-peer support</a></li>
+        <li><a href="#" class="govuk-link">speak to a schools' buying procurement expert in your local area</a></li>
+      </ul>
+
+      <p class="govuk-body">Once you're happy with the specification, go to the
+        next step to <a href="#" class="govuk-link">run the tendering process</a>
+        work out your routes to market, and get in touch with suppliers who can bid for the work.
+      </p>
+
+      <a href="step-by-step" role="button" draggable="false" class="govuk-button">
+        Save and continue later
+      </a>
+    </div>
+  </div>
+
+{% endblock %}

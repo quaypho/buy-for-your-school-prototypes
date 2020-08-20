@@ -1,0 +1,63 @@
+{% extends "layout-gather-info.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="plan-EU-threshold">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "lifetime-cost",
+          name: "lifetime-cost",
+          fieldset: {
+            legend: {
+              text: "What's your budget for the lifetime cost of the contract?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            html: "The lifetime cost of the contract will include:
+            <ul>
+              <li>the price of the goods, works or services</li>
+              <li>VAT</li>
+              <li>delivery charges</li>
+              <li>maintenance costs</li>
+              <li>running costs</li>
+              <li>the cost of removing and disposing of an item or service once you no longer need it</li>
+            </ul>"
+          },
+          items: [
+            {
+              value: "less than £10,000",
+              text: "less than £10,000"
+            },
+            {
+              value: "between £10,000 and £40,000",
+              text: "between £10,000 and £40,000"
+            },
+            {
+              value: "more than £40,000",
+              text: "more than £40,000"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+          govukButton({
+            text: "Continue",
+            preventDoubleClick: true
+          })
+        }}
+        {{ govukButton({
+          text: "Save and continue later",
+          classes: "govuk-button--secondary"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

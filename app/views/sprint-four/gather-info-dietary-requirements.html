@@ -1,0 +1,64 @@
+{% extends "layout-gather-info.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="gather-info-ordering-meals">
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        idPrefix: "dietary-requirements",
+        name: "dietary-requirements",
+        fieldset: {
+          legend: {
+            text: "What special dietary requirements need to be met?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Celiac",
+            text: "Celiac"
+          },
+          {
+            value: "Diabetic",
+            text: "Diabetic"
+          },
+          {
+            value: "Egg free",
+            text: "Egg free"
+          },
+          {
+            value: "Halal",
+            text: "Halal"
+          },
+          {
+            value: "Kosher",
+            text: "Kosher"
+          },
+          {
+            value: "Vegan",
+            text: "Vegan"
+          }
+        ]
+      }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+          govukButton({
+            text: "Continue",
+            preventDoubleClick: true
+          })
+        }}
+        {{ govukButton({
+          text: "Save and continue later",
+          classes: "govuk-button--secondary"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

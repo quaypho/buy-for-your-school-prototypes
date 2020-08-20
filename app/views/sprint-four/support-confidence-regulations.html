@@ -1,0 +1,59 @@
+{% extends "layout-support.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="support-check-your-answers">
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "regulations-confidence-level",
+          name: "regulations-confidence-level",
+          fieldset: {
+            legend: {
+              text: "How confident are you with the rules and regulations you need to follow?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "There are regulations based on the amount of money you will be spending and the type of school you are buying for."
+          },
+          items: [
+            {
+              value: "Very confident",
+              text: "Very confident"
+            },
+            {
+              value: "Somewhat confident",
+              text: "Somewhat confident"
+            },
+            {
+              value: "Neither confident nor unconfident",
+              text: "Neither confident nor unconfident"
+            },
+            {
+              value: "Somewhat unconfident",
+              text: "Somewhat unconfident"
+            },
+            {
+              value: "Very unconfident",
+              text: "Very unconfident"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+        govukButton({
+          text: "Continue",
+          preventDoubleClick: true
+        })
+      }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

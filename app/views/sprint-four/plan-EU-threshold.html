@@ -1,0 +1,58 @@
+{% extends "layout-gather-info.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="plan-prefered-process">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "lifetime-cost",
+          name: "lifetime-cost",
+          fieldset: {
+            legend: {
+              text: "Is the contract cost over the threshold for EU public contract regulations?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            html: "If the lifetime cost of your contract is over <a href='https://www.ojec.com/thresholds.aspx' class='govuk-link'>
+            the current EU threshold for public buying</a>, we'll point you to
+            some additional regulations around advertising your contract in the
+            Official Journal of the European Union (OJEU)."
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            },
+            {
+              value: "I'm not sure",
+              text: "I'm not sure"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+          govukButton({
+            text: "Continue",
+            preventDoubleClick: true
+          })
+        }}
+        {{ govukButton({
+          text: "Save and continue later",
+          classes: "govuk-button--secondary"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
