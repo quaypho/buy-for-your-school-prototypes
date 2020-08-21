@@ -4,7 +4,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="POST" action="gather-info-tender-post">
+      <form method="POST" action="plan-check-your-answers">
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukInput({
@@ -19,8 +19,8 @@
           governors or other person to get approval so that you can proced with
           the procurement"
         },
-        id: "domain-expert",
-        name: "domain-expert"
+        id: "procurement-authorisers",
+        name: "procurement-authorisers"
       }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
