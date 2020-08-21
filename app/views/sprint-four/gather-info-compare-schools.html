@@ -1,0 +1,112 @@
+{% extends "layout-gather-info.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="gather-info-check-your-answers">
+        <h2 class="govuk-heading-l">Compare estimated costs with similar schools</h2>
+
+        <p class="govuk-body">Below are the cost per head for local school's main meals.</p>
+
+        <h2 class="govuk-heading-l">Moor End Academy - &pound;2.40</h2>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              School phase:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Secondary
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              School type:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Academy convertor
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              2018/2019
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-l">Colne Valley High School - &pound;2.10</h2>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              School phase:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Secondary
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              School type:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Academy sponsor led
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              2018/2019
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-l">Royds Hall Community School - &pound;2.12</h2>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              School phase:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              All through
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              School type:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Academy sponsor led
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              2018/2019
+            </dd>
+          </div>
+        </dl>
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+          govukButton({
+            text: "Continue",
+            preventDoubleClick: true
+          })
+        }}
+        {{ govukButton({
+          text: "Save and continue later",
+          classes: "govuk-button--secondary"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

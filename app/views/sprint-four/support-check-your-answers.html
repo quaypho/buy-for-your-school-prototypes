@@ -1,0 +1,104 @@
+{% extends "layout-support.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">Check your answers</h1>
+
+        <h2 class="govuk-heading-m">Good and services</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What are you buying?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["what-buying"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> what are you buying?</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What service do you need?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["what-service"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> what service do you need?</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What service are you looking for in facilities management and estates?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["what-facilities-service"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> What service are you looking for in facilities management and estates?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Confidence and experience</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How confident are you with buying catering services?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["buying-confidence-level"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> how confident are you with buying catering services?</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Does your school have its own procurement policy for buying catering services?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["has-procurement-policy"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> does your school have its own procurement policy for buying catering services?</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How confident are you with the rules and regulations you need to follow?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["regulations-confidence-level"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> how confident are you with the rules and regulations you need to follow?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <a href="support-end" role="button" draggable="false" class="govuk-button">
+          Continue
+        </a>
+
+      </div>
+    </div>
+
+{% endblock %}
