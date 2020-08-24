@@ -4,7 +4,7 @@
 
   {% from "govuk/components/panel/macro.njk" import govukPanel %}
 
-  <div class="govuk-grid-row">
+  <div class="govuk-grid-row govuk-!-margin-bottom-9">
     <div class="govuk-grid-column-two-thirds">
       {{ govukPanel({
         titleText: "Your plan has been created"
@@ -14,8 +14,7 @@
         and your schools needs and the options available to you.
       </p>
 
-      <p class="govuk-body">A copy of the plan has also been emailed to you about
-      {EMAIL-ADDRESS} </p>
+      <p class="govuk-body">A copy of the plan has also been emailed to your email address</p>
     </div>
   </div>
 
@@ -29,15 +28,15 @@
       You do not think it will be over the <a href="https://www.ojeu.eu/" class="govuk-link">
       threshold for EU public contract regulations</a>.</p>
 
-      <p class="govuk-body"You have identified Peter Hallam as the person who knows most about what the service needs to do.</p>
+      <p class="govuk-body">You have identified {{ data["domain-expert"] }} as the person who knows most about what the service needs to do.</p>
 
-      <p class="govuk-body"Karen Rollinson will need to authorise the procurement before it can go out to tender.</p>
+      <p class="govuk-body">You school procurement authorisers who will to authorise the procurement before it can go out to tender are {{ data["procurement-authorisers"] }}.</p>
 
       <h2 class="govuk-heading-l">Tasks to help understand the needs and goals for the catering service.</h2>
 
       <h3 class="govuk-heading-m">Understand the performance of the existing supplier and contract.</h3>
 
-      <p class="govuk-body">Find out from Peter Hallam what the existing contract offers and what it has been like working
+      <p class="govuk-body">Find out from {{ data["domain-expert"] }} what the existing contract offers and what it has been like working
       with that supplier. You may find it useful to focus on what has gone well and what can be improved? </p>
 
       <p class="govuk-body">The aim of this step is to help you articulate your goal for this procurement in the specification
@@ -51,8 +50,8 @@
       www.gov.uk/buy-for-your-school/different-types-of-catering-contracts.html</a>.</p>
 
       <p class="govuk-body">You may also want to consider bringing catering in house, although this can be a time consuming
-      process. More information can be found here <a href="www.gov.uk/buy-for-your-school/different-types-of-catering-contracts.html#in-house-catering"
-      class="govuk-link">govuk-link</a>www.gov.uk/buy-for-your-school/different-types-of-catering-contracts.html#in-house-catering</a>.</p>
+      process. More information can be found here <a href="www.gov.uk/buy-for-your-school/different-types-of-catering-contracts.html#in-house-catering" class="govuk-link">
+      www.gov.uk/buy-for-your-school/different-types-of-catering-contracts.html#in-house-catering</a>.</p>
 
       <h3 class="govuk-heading-m">Find out what staff, governors and students want from a new catering service</h3>
 
@@ -96,7 +95,7 @@
       <p class="govuk-body">You need to understand what your obligations are and what they mean for your school. Find out
        where you can learn about relevant legislation. This may be from:</p>
 
-      <ul class="govuk-list">
+      <ul class="govuk-list govuk-list--bullet">
         <li>
           <a class="govuk-link" href="www.gov.uk/catering-legislation">www.gov.uk/catering-legislation</a>
         </li>
@@ -136,7 +135,7 @@
 
       <p class="govuk-body">They can include:</p>
 
-      <ul class="govuk-list">
+      <ul class="govuk-list govuk-list--bullet">
         <li>
           Special dietary requirements or allergies
         </li>
