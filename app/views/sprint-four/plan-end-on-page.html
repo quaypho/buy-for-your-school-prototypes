@@ -1,0 +1,166 @@
+{% extends "layout-support.html" %}
+
+{% block content %}
+
+  {% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Your plan has been created"
+      }) }}
+      <p class="govuk-body">Your answers have been used to build a plan
+        which can be used to help you understand more about catering, engaging the market
+        and your schools needs and the options available to you.
+      </p>
+
+      <p class="govuk-body">A copy of the plan has also been emailed to you about
+      {EMAIL-ADDRESS} </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Pre-procurement plan for catering services</h1>
+
+      <h2 class="govuk-heading-l">About your procurement</h2>
+
+      <p class="govuk-body">You are looking to buy catering services for a single school.
+      You do not think it will be over the <a href="https://www.ojeu.eu/" class="govuk-link">
+      threshold for EU public contract regulations</a>.</p>
+
+      <p class="govuk-body"You have identified Peter Hallam as the person who knows most about what the service needs to do.</p>
+
+      <p class="govuk-body"Karen Rollinson will need to authorise the procurement before it can go out to tender.</p>
+
+      <h2 class="govuk-heading-l">Tasks to help understand the needs and goals for the catering service.</h2>
+
+      <h3 class="govuk-heading-m">Understand the performance of the existing supplier and contract.</h3>
+
+      <p class="govuk-body">Find out from Peter Hallam what the existing contract offers and what it has been like working
+      with that supplier. You may find it useful to focus on what has gone well and what can be improved? </p>
+
+      <p class="govuk-body">The aim of this step is to help you articulate your goal for this procurement in the specification
+      builder.  You can find some guidance on this at <a href="www.gov.uk/buy-for-your-school/understanding-exisiting-contracts.html" class="govuk-link">
+      www.gov.uk/buy-for-your-school/understanding-exisiting-contracts.html</a>.</p>
+
+      <h3 class="govuk-heading-m">Review the finances for the current contract</h3>
+
+      <p class="govuk-body">Catering contracts can be cost neutral or turn a profit for the school. Find out about the
+      different types of catering contracts available at <a href="www.gov.uk/buy-for-your-school/different-types-of-catering-contracts.html" class="govuk-link">
+      www.gov.uk/buy-for-your-school/different-types-of-catering-contracts.html</a>.</p>
+
+      <p class="govuk-body">You may also want to consider bringing catering in house, although this can be a time consuming
+      process. More information can be found here <a href="www.gov.uk/buy-for-your-school/different-types-of-catering-contracts.html#in-house-catering"
+      class="govuk-link">govuk-link</a>www.gov.uk/buy-for-your-school/different-types-of-catering-contracts.html#in-house-catering</a>.</p>
+
+      <h3 class="govuk-heading-m">Find out what staff, governors and students want from a new catering service</h3>
+
+      <p class="govuk-body">You may want to speak to the headteacher, governors and parent teachers association to find
+      out what they want from a new catering contract. This may also help identify what key performance indicators (KPIs)
+      you can use to monitor the new contract.</p>
+
+      <p class="govuk-body">It may be useful to ask the students what they think of the current catering services and what
+      their needs are. This can be done through a student survey. More information can be found here
+      <a href="www.gov.uk/buy-for-your-school/guidance/school-survey.html" class="govuk-link">
+      www.gov.uk/buy-for-your-school/guidance/school-survey.html</a>.</p>
+
+      <h3 class="govuk-heading-m">Understand the timeline </h3>
+
+      <p class="govuk-body">You identified that the new catering service needs to be in place and ready by 6 September
+      2021. You will need to give notice on your current contract, find out what the notice period is and give notice at
+      the appropriate time.</p>
+
+      <p class="govuk-body">Contracts for complex services usually change during the easter or summer holidays, as the
+      services will usually not be required during these periods. It also gives time to deal with any unforeseen
+      circumstances.</p>
+
+      <p class="govuk-body">You may also want to start thinking about how you want to transition from the old suppliers
+      to the new.</p>
+
+      <h3 class="govuk-heading-m">Equipment and facilities audit</h3>
+
+      <p class="govuk-body">Catering suppliers will need to know what equipment and facilities will be available to them.
+      Understanding what the school and the current supplier can be complicated. You have identified Peter Hallam as the
+      person to speak to about the current contract. You may also want to speak to the current supplier or locate the
+      current contrac</p>
+
+      <p class="govuk-body">New suppliers for catering may want to visit the school so that they can see the facilities
+      and better understand the situation</p>
+
+      <p class="govuk-body">Some existing equipment many need disposing of, this can be something that the new supplier
+      helps with.</p>
+
+      <h3 class="govuk-heading-m">Review standards and legislation</h3>
+
+      <p class="govuk-body">You need to understand what your obligations are and what they mean for your school. Find out
+       where you can learn about relevant legislation. This may be from:</p>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="www.gov.uk/catering-legislation">www.gov.uk/catering-legislation</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/government/publications/join-or-create-a-network-for-school-business-professionals/school-business-professional-networks-directory">Speaking to the school’s buyer professional network</a>
+        </li>
+        <li>
+          Suppliers
+        </li>
+        <li>
+          Public sector buying organisations
+        </li>
+        <li>
+          School’s buying hubs
+        </li>
+      </ul>
+
+      <h3 class="govuk-heading-m">Identify ethical and environmental considerations</h3>
+
+      <p class="govuk-body">Your school may have policies or considerations regarding the ethical and environmental
+      impact of the service you are looking to procure. The head teacher or governors may be able to help you understand
+      these policies/considerations so that you can include them in the specification you will need to share with
+      suppliers.</p>
+
+      <h3 class="govuk-heading-m">Find out if there are regional policies that will affect you procurement</h3>
+
+      <p class="govuk-body">Be aware that there could be local policies that might apply to your school. We recommend
+      speaking to your <a class="govuk-link" href="https://www.bristol.gov.uk/documents/20182/33379/Good+Food+and+Catering+Procurement+Policy+%28Framework%29+2018.pdf/d7f8f476-5a7b-cf17-19df-cb29f0b2dcb8">
+      local authority</a> or <a class="govuk-link" href="https://www.gov.uk/government/publications/join-or-create-a-network-for-school-business-professionals/school-business-professional-networks-directory">
+      school’s buyer professional</a> network to see if you are subject to any local policies.</p>
+
+      <h3 class="govuk-heading-m">Additional contract requirements</h3>
+
+      <p class="govuk-body">There may be additional requirements for your catering contract outside of what you would
+      consider business as usual. Your existing catering contract and Peter Hallam may be able to help you identify these
+      requirements.</p>
+
+      <p class="govuk-body">They can include:</p>
+
+      <ul class="govuk-list">
+        <li>
+          Special dietary requirements or allergies
+        </li>
+        <li>
+          Additional meals required during a normal school day
+        </li>
+        <li>
+          Meals required on school trips or open days
+        </li>
+        <li>
+          Cultural considerations
+        </li>
+        <li>
+          Only paying for what is consumed
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-l">Next steps</h2>
+
+      <p class="govuk-body">When you have completed the pre-procurement plan you should know everything you need to be
+       able to start the <a class="govuk-link" href="support-start-page">gathering your needs and creating a specification</a> step.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
