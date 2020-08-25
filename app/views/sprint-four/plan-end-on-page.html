@@ -24,9 +24,19 @@
 
       <h2 class="govuk-heading-l">About your procurement</h2>
 
-      <p class="govuk-body">You are looking to buy catering services for a single school.
-      You do not think it will be over the <a href="https://www.ojeu.eu/" class="govuk-link">
-      threshold for EU public contract regulations</a>.</p>
+      <p class="govuk-body">You are looking to buy catering services for {{ data["how-many-schools"] }}.</p>
+
+      <p class="govuk-body">
+       {% if data['over-OJEU'] == 'Yes'%}
+          You do think
+        {% endif %}
+
+        {% if data['over-OJEU'] == 'No'%}
+            You do not think
+        {% endif %}
+        it will be over the <a href="https://www.ojeu.eu/" class="govuk-link">
+        threshold for EU public contract regulations</a>.
+      </p>
 
       <p class="govuk-body">You have identified {{ data["domain-expert"] }} as the person who knows most about what the service needs to do.</p>
 
