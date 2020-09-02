@@ -1,5 +1,11 @@
+const contentful = require("contentful");
 const express = require('express')
 const router = express.Router()
+
+const contentfulClient = contentful.createClient({
+  space: "jspwts36h1os",
+  accessToken: "TRhCuyh6kpjMf9Sx8siWHpUEVsvbca9XtXdj2NmwJ8A"
+});
 
 // Add your routes here - above the module.exports line
 
