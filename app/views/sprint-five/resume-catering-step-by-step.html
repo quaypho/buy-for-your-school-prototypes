@@ -1,0 +1,234 @@
+{% extends "layout.html" %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/step-by-step-nav.js"></script>
+  <script type="text/javascript">
+    var $element = $('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+    stepByStepNavigation.start($element)
+  </script>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Catering procurement last updated 22 August 2020</span>
+      <h1 class="govuk-heading-xl">Sept 2021 Catering contract</h1>
+
+      <p>
+        This is a catering procurement for (Your School)
+      </p>
+
+      <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
+        <ol class="app-step-nav__steps">
+          <li class="app-step-nav__step js-step" id="get-the-right-support-with-buying" >
+            <div class="app-step-nav__header js-toggle-panel" data-position="1">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden">Step</span> 1
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-summary-list__wide">
+                      Plan how to buy for your school
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      <strong class="govuk-tag">Completed</strong>
+                    </dd>
+                  </div>
+                </span>
+              </h2>
+            </div>
+
+            <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-get-the-right-support-with-buying">
+              <p class="app-step-nav__paragraph">Get help understanding what you need to do, who you need to involve, and things you need to think about.</p>
+
+              <ol class="app-step-nav__list " data-length="1">
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="1.1" class="app-step-nav__link js-link" href="plan-start-page.html">Plan how to buy for your school</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+
+          <li class="app-step-nav__step js-step" id="get-the-right-support-with-buying" >
+            <div class="app-step-nav__header js-toggle-panel" data-position="2">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden">Step</span> 2
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-summary-list__wide">
+                      Specify what your school needs to buy
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      <strong class="govuk-tag govuk-tag--turquoise">In progress</strong>
+                    </dd>
+                  </div>
+                </span>
+              </h2>
+            </div>
+
+            <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-get-the-right-support-with-buying">
+              <p class="app-step-nav__paragraph">Gather key information and school requirements for what you're buying and use that to generate a draft specification that can be used in the tender process.
+                  You can  also see what other schools are spending on similar things.</p>
+
+              <ol class="app-step-nav__list" data-length="2">
+                <li class="app-step-nav__list-item js-list-item">
+                  <a data-position="2.1" class="app-step-nav__link js-link" href="resume-catering-task-list.html">
+                    Specify what your school needs to buy
+                      <span class="app-step-nav__context">context about stuff</span>
+                  </a>
+                </li>
+              </ol>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <div class="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="step-2-complete" name="step-2-complete" type="checkbox" value="step-2-complete">
+                      <label class="govuk-label govuk-checkboxes__label" for="step-2-complete">
+                        Mark step 2 as complete
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+            </div>
+          </li>
+
+          <li class="app-step-nav__step js-step" id="gather-information-on-what-youre-buying" >
+            <div class="app-step-nav__header js-toggle-panel" data-position="3">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden">Step</span> 3
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-summary-list__wide">
+                      Select a route to market when buying for your school
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                    </dd>
+                  </div>
+                </span>
+              </h2>
+            </div>
+
+            <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-gather-information-on-what-youre-buying">
+              <p class="app-step-nav__paragraph">Select a route to market when buying for your school.
+              </p>
+              <ol class="app-step-nav__list" data-length="2">
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="3.1" class="app-step-nav__link js-link" href="#">Find out about the different routes to market</a>
+                </li>
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="3.2" class="app-step-nav__link js-link" href="#">Identify an appropriate route to market</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+
+          <li class="app-step-nav__step js-step" id="connect-with-suppliers" >
+            <div class="app-step-nav__header js-toggle-panel" data-position="4">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden">Step</span> 4
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-summary-list__wide">
+                      Get help speaking to suppliers about your school's buying needs
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                    </dd>
+                  </div>
+                </span>
+              </h2>
+            </div>
+
+            <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-connect-with-suppliers">
+              <p class="app-step-nav__paragraph">Get help speaking to suppliers about your school's buying needs</p>
+
+              <ol class="app-step-nav__list " data-length="4">
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="4.1" class="app-step-nav__link js-link" href="#">Guidance on the different routes to market</a>
+                </li>
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="4.2" class="app-step-nav__link js-link" href="#">Identify the route to market and connect with suppliers</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+
+          <li class="app-step-nav__step js-step" id="manage-tenders" >
+            <div class="app-step-nav__header js-toggle-panel" data-position="5">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden">Step</span> 5
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-summary-list__wide">
+                      Get help advertising your school's contract for tender
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                    </dd>
+                  </div>
+                </span>
+              </h2>
+            </div>
+
+            <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-manage-tenders">
+              <ol class="app-step-nav__list " data-length="1">
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="5.1" class="app-step-nav__link js-link" href="#">Get help advertising your school's contract for tender</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <a href="#" role="button" draggable="false" class="govuk-button">
+        Save
+      </a>
+      <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary">
+        Mark procurement as complete
+      </a>
+    </div>
+  </div>
+
+{% endblock %}
