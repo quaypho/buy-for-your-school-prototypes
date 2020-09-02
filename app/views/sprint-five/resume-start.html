@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/step-by-step-nav.js"></script>
+  <script type="text/javascript">
+    var $element = $('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+    stepByStepNavigation.start($element)
+  </script>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+      Start page
+    </h1>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body">If you're starting the process of buying something for your school, get help understanding:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>what steps you need to take</li>
+        <li>how much time you might need</li>
+        <li>who you need to involve</li>
+        <li>which regulations might apply</li>
+        <li>what support you can get</li>
+      </ul>
+
+      <p class="govuk-body">We'll start by asking you a few questions to help us decide what information you need.
+
+      <p class="govuk-body">It will take around 5 minutes to complete the process</p>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p class="govuk-body">You should already know:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>which goods or services your school needs to buy – you do not need to know any specific details at this stage</li>
+        <li>the date your school needs to have these by</li>
+        <li>your school's budget for the lifetime of the goods or services you're buying</li>
+        <li><a href='https://www.ojec.com/thresholds.aspx' class='govuk-link'>
+            the current EU threshold for public buying</a></li>
+      </ul>
+
+      <a href="resume-or-new" role="button" draggable="false" class="govuk-button govuk-button--start">
+        Continue
+      </a>
+    </div>
+
+  </div>
+
+{% endblock %}
