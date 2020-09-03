@@ -16,7 +16,7 @@ router.get("/sprint-five/resume-or-new", function(req, res) {
 router.post("/sprint-five/resume-or-new", function(req, res) {
   let resumeExisting = req.session.data["resume-existing"];
 
-  if (resumeExisting === "Yes - resume my existing procurement") {
+  if (resumeExisting === "Resume an existing procurement plan") {
     res.redirect("/sprint-five/resume-email");
   } else {
     res.redirect("/sprint-four/step-by-step");
