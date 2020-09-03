@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "contentful": "^7.14.6",
     "glob": "^7.1.4",
     "jest": "^25.2.7",
     "node-sass": "^4.14.1",
