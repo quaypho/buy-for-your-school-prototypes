@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="plan-check-your-answers">
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "What email address will you use for this procurement?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            html: "So that you can recover and continue your procurement we need to ask for an email address. You will need to provide this when you want to resume this procurement.<br/><br/>We recommend using your school email address."
+          },
+          id: "recovery-email",
+          name: "recovery-email"
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+          govukButton({
+            text: "Continue",
+            preventDoubleClick: true
+          })
+        }}
+        {{ govukButton({
+          text: "Save and continue later",
+          classes: "govuk-button--secondary"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
