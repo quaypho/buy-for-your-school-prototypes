@@ -1,0 +1,162 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">Check your answers</h1>
+
+        <h2 class="govuk-heading-m">Plan how to buy for your school</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What are you buying?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["good-or-service"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="plan-goods-or-service">
+                Change<span class="govuk-visually-hidden"> What are you buying?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What service are you looking to buy?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["confirmed-service"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="plan-category-of-spend">
+                Change<span class="govuk-visually-hidden"> What service are you looking to buy?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How many schools does the service need to provide for?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["how-many-schools"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="plan-how-many-schools">
+                Change<span class="govuk-visually-hidden"> How many schools does the service need to provide for?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              When do you need a supplier to start providing the service?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["provision-start"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="plan-provision-start-date">
+                Change<span class="govuk-visually-hidden"> When do you need a supplier to start providing the service?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What's your budget for the lifetime cost of the contract?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["lifetime-cost"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="plan-lifetime-cost">
+                Change<span class="govuk-visually-hidden"> What's your budget for the lifetime cost of the contract?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is the contract cost over the threshold for EU public contract regulations?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["over-OJEU"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="plan-EU-threshold">
+                Change<span class="govuk-visually-hidden"> Is the contract cost over the threshold for EU public contract regulations?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Does your school already have a preferred process for buying this type of service?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["preferred-process"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="plan-prefered-process">
+                Change<span class="govuk-visually-hidden"> Does your school already have a preferred process for buying this type of service?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who in your school knows the most about what the service needs to do?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["domain-expert"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="plan-domain-expert">
+                Change<span class="govuk-visually-hidden"> Who in your school knows the most about what the service needs to do?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who authorises procurement in the school?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["procurement-authorisers"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="plan-procurement-authorisers">
+                Change<span class="govuk-visually-hidden"> Who authorises procurement in the school?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <a href="non-linear-step-by-step" role="button" draggable="false" class="govuk-button">
+          Continue
+        </a>
+
+      </div>
+    </div>
+
+{% endblock %}

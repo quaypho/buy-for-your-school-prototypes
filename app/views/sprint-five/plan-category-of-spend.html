@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="plan-buy-did-you-mean">
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "What service are you looking to buy?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Start typing the category of service you need. For example, 'catering' or 'ICT'."
+          },
+          id: "category-of-spend",
+          name: "category-of-spend"
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+          govukButton({
+            text: "Continue",
+            preventDoubleClick: true
+          })
+        }}
+        {{ govukButton({
+          text: "Save and continue later",
+          classes: "govuk-button--secondary"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  {% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Your plan has been created"
+      }) }}
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">Your answers have been used to build a plan
+        which can be used to help you understand more about catering, engaging the market
+        and your schools needs and the options available to you. <a href="https://docs.google.com/document/d/1r9bqIC6JskpM1ZYTT9s10pH0lXZLxF92x5ZfiTuPkwU/edit?usp=sharing" class="govuk-link">
+        Download a copy of your pre-procurement plan</a>.
+      </p>
+
+      <p class="govuk-body">For more support on refining your specification:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#" class="govuk-link">join a school business professional network for peer-to-peer support</a></li>
+        <li><a href="#" class="govuk-link">speak to a schools' buying procurement expert in your local area</a></li>
+      </ul>
+
+      <p class="govuk-body">When you have completed the pre-procurement plan
+        you should know everything you need to be able to start the <a href="gather-info-start-page" class="govuk-link">
+        gathering your needs and creating a specification</a> step.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

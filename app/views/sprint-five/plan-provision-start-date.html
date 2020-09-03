@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="plan-lifetime-cost">
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+        {{ govukDateInput({
+          id: "provision-start",
+          namePrefix: "provision-start",
+          fieldset: {
+            legend: {
+              text: "When do you need a supplier to start providing the service?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            html: "This may be later than the date the contract starts, to allow time to make arrangements for the service.<br /><br />
+            If the service is for multiple schools starting on different dates, enter the earliest date the service will need to start."
+          }
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+          govukButton({
+            text: "Continue",
+            preventDoubleClick: true
+          })
+        }}
+        {{ govukButton({
+          text: "Save and continue later",
+          classes: "govuk-button--secondary"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

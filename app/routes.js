@@ -9,6 +9,8 @@ const contentfulClient = contentful.createClient({
 
 // Add your routes here - above the module.exports line
 
+let step2Status = "Not started";
+
 router.get("/sprint-five/resume-or-new", function(req, res) {
   res.render("sprint-five/resume-or-new");
 });
@@ -21,6 +23,26 @@ router.post("/sprint-five/resume-or-new", function(req, res) {
   } else {
     res.redirect("/sprint-four/step-by-step");
   }
+});
+
+router.get("/sprint-five/non-linear-resume-or-new", function(req, res) {
+  res.render("sprint-five/non-linear-resume-or-new");
+});
+
+router.post("/sprint-five/non-linear-resume-or-new", function(req, res) {
+  let nonLinearResumeExisting = req.session.data["non-linear-resume-existing"];
+
+  if (nonLinearResumeExisting === "Yes - resume my existing procurement") {
+    res.redirect("/sprint-five/resume-email");
+  } else {
+    res.redirect("/sprint-five/plan-goods-or-service");
+  }
+
+});
+
+router.get("/sprint-five/non-linear-step-by-step", function(req, res) {
+  res.render("sprint-five/non-linear-step-by-step");
+
 });
 
 router.get("/contentful-test/:slug", async (req, res) => {
