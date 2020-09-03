@@ -24,3 +24,14 @@
     border-bottom:0 none;
   }
 }
+
+.govuk-grid-column-one-third{
+  .js-step-title{
+    .govuk-summary-list__key{
+      vertical-align: top;
+    }
+    .govuk-tag{
+      font-size: 14px !important;
+    }
+  }
+}
