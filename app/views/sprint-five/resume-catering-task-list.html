@@ -18,11 +18,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-xl">Sept 2021 catering contract</span>
-      <h1 class="govuk-heading-xl">Specify what you school needs to buy</h1>
+      <h1 class="govuk-heading-xl">Specify what your school needs to buy</h1>
 
       <p class="govuk-body">Get help gathering your school's requirements for what you need to buy, and start to draft a specification that you'll be able to share with suppliers.</p>
 
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 3 sections.</p>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 3 sections.</p>
 
       <ol class="app-task-list">
         <li>
@@ -32,18 +32,35 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="eligibility-status">
-                  How do you want suppliers to contact you about <br/> your specification?
-                </a>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-summary-list__wide">
+                      <a href="non-linear-supplier-communication" aria-describedby="eligibility-status">
+                        How do you want suppliers to contact you about your specification?
+                      </a>
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {% if data['specifyContactInformation'] == ''%}
+                          <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                        {% endif %}
+
+                        {% if data['specifyContactInformation'] == 'In progress'%}
+                          <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+                        {% endif %}
+
+                        {% if data['specifyContactInformation'] == 'Completed'%}
+                          <strong class="govuk-tag">Completed</strong>
+                        {% endif %}
+                    </dd>
+                  </div>
               </span>
-              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+
             </li>
           </ul>
         </li>
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> About your current or previous catering contract
+            <span class="app-task-list__section-number">2. </span> About your current or previous {{data["confirmed-service"]}} contract
           </h2>
           <p class="govuk-body">(Domain expert name) may be able to help you understand what worked well and what could be improved on your previous (Category of spend) contract.</p>
           <ul class="app-task-list__items">

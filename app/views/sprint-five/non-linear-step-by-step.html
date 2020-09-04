@@ -18,7 +18,11 @@
       <h1 class="govuk-heading-xl">Sept 2021 Catering contract</h1>
 
       <p>
-        This is a {{data["confirmed-service"]}} procurement for (Your School)
+        This is a {{data["confirmed-service"]}} procurement for {{data["how-many-schools"]}}.
+      </p>
+
+      <p>
+        Your school is {{data["school-name"]}}.
       </p>
 
       <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
@@ -84,7 +88,7 @@
                       {% endif %}
 
                       {% if data['step2Status'] == 'Completed'%}
-                        <strong class="govuk-tag govuk-tag--turquoise">In progress</strong>
+                        <strong class="govuk-tag">Completed</strong>
                       {% endif %}
 
                     </dd>
@@ -100,7 +104,6 @@
                 <li class="app-step-nav__list-item js-list-item">
                   <a data-position="2.1" class="app-step-nav__link js-link" href="resume-catering-task-list.html">
                     Specify what your school needs to buy
-                      <span class="app-step-nav__context">context about stuff</span>
                   </a>
                 </li>
               </ol>

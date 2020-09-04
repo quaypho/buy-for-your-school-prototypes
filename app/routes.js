@@ -45,6 +45,34 @@ router.get("/sprint-five/non-linear-step-by-step", function(req, res) {
 
 });
 
+//Sprint 5 non-linear
+
+router.get("/sprint-five/non-linear-supplier-communication", function(req, res) {
+  res.render("sprint-five/non-linear-supplier-communication");
+  req.session.data.specifyContactInformation = "In progress"
+});
+
+router.post("/sprint-five/non-linear-supplier-communication", function(req, res) {
+  let nonLinearSupplierCommunication = req.session.data["supplier-communication-methods"];
+
+  req.session.data.specifyContactInformation = "Completed"
+
+  if (nonLinearSupplierCommunication === "Email") {
+    res.redirect("/sprint-five/non-linear-supplier-email");
+  }
+  if (nonLinearSupplierCommunication === "Post") {
+    res.redirect("/sprint-five/non-linear-supplier-post");
+  }
+  if (nonLinearSupplierCommunication === "Telephone") {
+    res.redirect("/sprint-five/non-linear-supplier-telephone");
+  }
+
+});
+
+//Sprint 5 non-linear End
+
+//Contentful settings
+
 router.get("/contentful-test/:slug", async (req, res) => {
   const questionEntries = await contentfulClient.getEntries({
     content_type: "question",

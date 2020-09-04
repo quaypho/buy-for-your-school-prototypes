@@ -4,20 +4,19 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="POST" action="non-linear-school-name">
+      <form method="POST" action="resume-catering-task-list">
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
-        {{ govukInput({
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {{ govukTextarea({
+          name: "supplier-contact-post",
+          id: "supplier-contact-post",
           label: {
-            text: "What email address will you use for this procurement?",
+            text: "What is your postal address at the school?",
             classes: "govuk-label--l",
             isPageHeading: true
-          },
-          hint: {
-            html: "So that you can recover and continue your procurement we need to ask for an email address. You will need to provide this when you want to resume this procurement.<br/><br/>We recommend using your school email address."
-          },
-          id: "recovery-email",
-          name: "recovery-email"
+          }
         }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
