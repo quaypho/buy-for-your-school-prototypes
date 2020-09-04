@@ -4,42 +4,37 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="POST" action="plan-EU-threshold">
+      <form method="POST" action="non-linear-prefered-process">
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          idPrefix: "lifetime-cost",
-          name: "lifetime-cost",
+          idPrefix: "over-OJEU",
+          name: "over-OJEU",
           fieldset: {
             legend: {
-              text: "What's your budget for the lifetime cost of the contract?",
+              text: "Is the contract cost over the threshold for EU public contract regulations?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
-            html: "The lifetime cost of the contract will include:
-            <ul>
-              <li>the price of the goods, works or services</li>
-              <li>VAT</li>
-              <li>delivery charges</li>
-              <li>maintenance costs</li>
-              <li>running costs</li>
-              <li>the cost of removing and disposing of an item or service once you no longer need it</li>
-            </ul>"
+            html: "If the lifetime cost of your contract is over <a href='https://www.ojec.com/thresholds.aspx' class='govuk-link'>
+            the current EU threshold for public buying</a>, we'll point you to
+            some additional regulations around advertising your contract in the
+            Official Journal of the European Union (OJEU)."
           },
           items: [
             {
-              value: "less than £10,000",
-              text: "less than £10,000"
+              value: "Yes",
+              text: "Yes"
             },
             {
-              value: "between £10,000 and £40,000",
-              text: "between £10,000 and £40,000"
+              value: "No",
+              text: "No"
             },
             {
-              value: "more than £40,000",
-              text: "more than £40,000"
+              value: "I'm not sure",
+              text: "I'm not sure"
             }
           ]
         }) }}

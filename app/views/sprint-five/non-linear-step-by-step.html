@@ -14,15 +14,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">{{data["confirmed-service"]}} procurement last updated 22 August 2020</span>
+      <span class="govuk-caption-xl">Catering procurement last updated 22 August 2020</span>
       <h1 class="govuk-heading-xl">Sept 2021 Catering contract</h1>
 
       <p>
-        This is a {{data["confirmed-service"]}} procurement for {{data["how-many-schools"]}}.
-      </p>
-
-      <p>
-        Your school is {{data["school-name"]}}.
+        This is a catering procurement for (Your School)
       </p>
 
       <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
@@ -79,18 +75,7 @@
                       Specify what your school needs to buy
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {% if data['step2Status'] == 'Not started'%}
-                        <strong class="govuk-tag govuk-tag--grey">Not started</strong>
-                      {% endif %}
-
-                      {% if data['step2Status'] == 'In progress'%}
-                        <strong class="govuk-tag govuk-tag--blue">In progress</strong>
-                      {% endif %}
-
-                      {% if data['step2Status'] == 'Completed'%}
-                        <strong class="govuk-tag">Completed</strong>
-                      {% endif %}
-
+                      <strong class="govuk-tag govuk-tag--blue">In progress</strong>
                     </dd>
                   </div>
                 </span>
@@ -98,11 +83,12 @@
             </div>
 
             <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-get-the-right-support-with-buying">
-              <p class="app-step-nav__paragraph">Gather key information and school requirements for what you're buying and use that to generate a draft specification that can be used in the tender process.</p>
+              <p class="app-step-nav__paragraph">Get help gathering your school's requirements for what you need to buy,
+                and start to draft a specification that you'll be able to share with suppliers.</p>
 
               <ol class="app-step-nav__list" data-length="2">
                 <li class="app-step-nav__list-item js-list-item">
-                  <a data-position="2.1" class="app-step-nav__link js-link" href="resume-catering-task-list.html">
+                  <a data-position="2.1" class="app-step-nav__link js-link" href="non-linear-step-2-task-list.html">
                     Specify what your school needs to buy
                   </a>
                 </li>

@@ -9,7 +9,14 @@ const contentfulClient = contentful.createClient({
 
 // Add your routes here - above the module.exports line
 
-let step2Status = "Not started";
+//Set initial variables
+router.get("/sprint-five/non-linear-start", function(req, res){
+  res.render("sprint-five/non-linear-start")
+  req.session.data.specifyContactInformation = "Not started"
+  req.session.data.specifyFacilitiesAvailable = "Not started"
+  req.session.data.specifyPreviousContract = "Completed"
+  req.session.data.specifyFacilitiesAvailable = "In progress"
+});
 
 router.get("/sprint-five/resume-or-new", function(req, res) {
   res.render("sprint-five/resume-or-new");
@@ -35,14 +42,12 @@ router.post("/sprint-five/non-linear-resume-or-new", function(req, res) {
   if (nonLinearResumeExisting === "Yes - resume my existing procurement") {
     res.redirect("/sprint-five/resume-email");
   } else {
-    res.redirect("/sprint-five/plan-goods-or-service");
+    res.redirect("/sprint-five/non-linear-goods-or-service");
   }
-
 });
 
 router.get("/sprint-five/non-linear-step-by-step", function(req, res) {
   res.render("sprint-five/non-linear-step-by-step");
-
 });
 
 //Sprint 5 non-linear
@@ -67,6 +72,21 @@ router.post("/sprint-five/non-linear-supplier-communication", function(req, res)
     res.redirect("/sprint-five/non-linear-supplier-telephone");
   }
 
+});
+
+router.get("/sprint-five/non-linear-facilities-available", function(req, res) {
+  res.render("sprint-five/non-linear-facilities-available");
+  req.session.data.specifyContactInformation = "In progress"
+});
+
+router.get("/sprint-five/non-linear-table-goods", function(req, res) {
+  res.render("sprint-five/non-linear-table-goods");
+  req.session.data.specifyContactInformation = "In progress"
+});
+
+router.post("/sprint-five/non-linear-table-goods", function(req, res) {
+  req.session.data.specifyFacilitiesAvailable = "Completed"
+  res.redirect("/sprint-five/resume-catering-task-list");
 });
 
 //Sprint 5 non-linear End

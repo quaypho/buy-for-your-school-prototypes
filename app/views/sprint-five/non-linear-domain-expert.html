@@ -4,21 +4,21 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="POST" action="plan-buy-did-you-mean">
+      <form method="POST" action="non-linear-procurement-authorisers">
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
-        {{ govukInput({
-          label: {
-            text: "What service are you looking to buy?",
-            classes: "govuk-label--l",
-            isPageHeading: true
-          },
-          hint: {
-            text: "Start typing the category of service you need. For example, 'catering' or 'ICT'."
-          },
-          id: "category-of-spend",
-          name: "category-of-spend"
-        }) }}
+      {{ govukInput({
+        label: {
+          text: "Who in your school knows the most about what the service needs to do?",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        hint: {
+          text: "This might be the person who managed any previous catering contract."
+        },
+        id: "domain-expert",
+        name: "domain-expert"
+      }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
 
