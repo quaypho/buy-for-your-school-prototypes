@@ -14,12 +14,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Catering procurement last updated 22 August 2020</span>
+      <span class="govuk-caption-xl">{{data["category-of-spend"]}} procurement last updated 22 August 2020</span>
       <h1 class="govuk-heading-xl">{{data["procurement-name"]}}</h1>
 
       <p>
-        This is a catering procurement for (Your School)
+        This is a {{data["category-of-spend"]}} procurement for {{data["school-name"]}}.
+        You have identified {{data["domain-expert"]}} as someone who may be able
+        to help you understand your current contract. You will need approval form
+        {{data["procurement-authorisers"]}} before you can go to tender.
       </p>
+
 
       <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
         <ol class="app-step-nav__steps">
