@@ -17,7 +17,6 @@ router.get("/sprint-five/non-linear-start", function(req, res){
   req.session.data.specifyFacilitiesAvailable = "Not started"
   req.session.data.specifyFoodRequirements = "Not started"
   req.session.data.specifyContractAims = "Not started"
-
 });
 
 router.get("/sprint-five/resume-or-new", function(req, res) {
@@ -34,6 +33,19 @@ router.post("/sprint-five/resume-or-new", function(req, res) {
   }
 });
 
+router.get("/sprint-five/resume-email-code", function(req, res) {
+  res.render("sprint-five/resume-email-code");
+  req.session.data.specifyContactInformation = "Completed"
+  req.session.data.specifyPreviousContract = "Not started"
+  req.session.data.specifyFacilitiesAvailable = "In progress"
+  req.session.data.specifyFoodRequirements = "Not started"
+  req.session.data.specifyContractAims = "Not started"
+});
+
+router.post("/sprint-five/resume-email-code", function(req, res) {
+  res.redirect("/sprint-five/non-linear-step-by-step");
+});
+
 router.get("/sprint-five/non-linear-resume-or-new", function(req, res) {
   res.render("sprint-five/non-linear-resume-or-new");
 });
@@ -46,6 +58,14 @@ router.post("/sprint-five/non-linear-resume-or-new", function(req, res) {
   } else {
     res.redirect("/sprint-five/non-linear-goods-or-service");
   }
+});
+
+router.get("/sprint-five/resume-email", function(req, res) {
+  res.render("sprint-five/resume-email");
+});
+
+router.post("/sprint-five/resume-email", function(req, res) {
+  res.redirect("/sprint-five/resume-email-code");
 });
 
 router.get("/sprint-five/non-linear-step-by-step", function(req, res) {
