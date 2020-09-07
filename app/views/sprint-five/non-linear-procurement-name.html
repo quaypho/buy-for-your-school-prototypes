@@ -4,20 +4,20 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="POST" action="non-linear-procurement-name">
+      <form method="POST" action="non-linear-check-your-answers">
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "What is the name of your school?",
+            text: "How will you refer internally to this procurement?",
             classes: "govuk-label--l",
             isPageHeading: true
           },
           hint: {
-            text: "We use information for get information about schools to fill in information about your school and save you time."
+            html: "Give a short meaningful name that can be used to identify the procurement. This name is only for your reference."
           },
-          id: "school-name",
-          name: "school-name"
+          id: "procurement-name",
+          name: "procurement-name"
         }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}

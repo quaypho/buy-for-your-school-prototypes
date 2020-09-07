@@ -17,6 +17,7 @@ router.get("/sprint-five/non-linear-start", function(req, res){
   req.session.data.specifyFacilitiesAvailable = "Not started"
   req.session.data.specifyFoodRequirements = "Not started"
   req.session.data.specifyContractAims = "Not started"
+  req.session.data.specifyProcurementName = "No name given"
 });
 
 router.get("/sprint-five/resume-or-new", function(req, res) {
