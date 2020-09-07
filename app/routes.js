@@ -15,7 +15,7 @@ router.get("/sprint-five/non-linear-start", function(req, res){
   req.session.data.specifyContactInformation = "Not started"
   req.session.data.specifyPreviousContract = "Not started"
   req.session.data.specifyFacilitiesAvailable = "Not started"
-  req.session.data.specifyFoodRequirements = "In progress"
+  req.session.data.specifyFoodRequirements = "Not started"
   req.session.data.specifyContractAims = "Not started"
 
 });
@@ -78,7 +78,7 @@ router.post("/sprint-five/non-linear-supplier-communication", function(req, res)
 
 router.get("/sprint-five/non-linear-facilities-available", function(req, res) {
   res.render("sprint-five/non-linear-facilities-available");
-  req.session.data.specifyContactInformation = "In progress"
+  req.session.data.specifyFacilitiesAvailable = "In progress"
 });
 
 router.post("/sprint-five/non-linear-facilities-available", function(req, res) {
@@ -95,7 +95,6 @@ router.post("/sprint-five/non-linear-heavy-goods", function(req, res) {
 
 router.get("/sprint-five/non-linear-table-goods", function(req, res) {
   res.render("sprint-five/non-linear-table-goods");
-  req.session.data.specifyFacilitiesAvailable = "In progress"
 });
 
 router.post("/sprint-five/non-linear-table-goods", function(req, res) {

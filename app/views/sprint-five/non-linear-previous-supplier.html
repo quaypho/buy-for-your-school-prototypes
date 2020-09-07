@@ -18,7 +18,7 @@
             isPageHeading: true
           },
           hint: {
-            text: "Summarise what your current supplier offers. Are you getting too much or too little? What additional things do they provide?"
+            text: "Understand the performance of the existing supplier and contract and review the finances for the current contract."
           }
         }) }}
 
@@ -26,7 +26,23 @@
 
         {{ govukDetails({
           summaryText: "Help with this question",
-          text: "Think about how many meals are served throughout the day, how the food is ordered, how manys days per year meals are supplied, current cost of meal per student and any future requirements you may have."
+          html: "<h2 class='govuk-heading-m'>Understand the performance of the existing supplier and contract</h2>
+                Find out from what the existing contract offers and what it has
+                been like working with that supplier. You may find it useful to
+                focus on what has gone well and what can be improved?
+                <br/><br/>
+                The aim of this step is to help you articulate your goal for
+                this procurement in the specification builder. You can find some
+                guidance on this at <a href='www.gov.uk/buy-for-your-school/understanding-exisiting-contracts.html' class='govuk-link'>www.gov.uk/buy-for-your-school/understanding-exisiting-contracts.html</a>.
+                <br/><br/>
+                <h2 class='govuk-heading-m'>Review the finances for the current contract</h2>
+                Catering contracts can be cost neutral or turn a profit for the
+                school. Find out about the different types of catering contracts
+                available at <a href='www.gov.uk/buy-for-your-school/different-types-of-catering-contracts.html' class='govuk-link'>www.gov.uk/buy-for-your-school/different-types-of-catering-contracts.html</a>.
+                <br/><br/>
+                You may also want to consider bringing catering in house,
+                although this can be a time consuming process. More information
+                can be found here <a href='www.gov.uk/buy-for-your-school/different-types-of-catering-contracts.html#in-house-catering' class='govuk-link'>www.gov.uk/buy-for-your-school/different-types-of-catering-contracts.html#in-house-catering</a>."
         }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}

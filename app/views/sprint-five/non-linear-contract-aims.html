@@ -18,8 +18,16 @@
             isPageHeading: true
           },
           hint: {
-            text: "What do you want or need this new service to provide. What are your core aims that you need to have fulfilled?"
+            text: "Find out what staff, governors and students want from a new catering service."
           }
+        }) }}
+
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+        {{ govukDetails({
+          summaryText: "Help with this question",
+          html: "You may want to speak to the headteacher, governors and parent teachers association to find out what they want from a new catering contract. This may also help identify what key performance indicators (KPIs) you can use to monitor the new contract.<br /><br/>
+                It may be useful to ask the students what they think of the current catering services and what their needs are. This can be done through a student survey. More information can be found here <a href='www.gov.uk/buy-for-your-school/guidance/school-survey.html' class='govuk-link'>www.gov.uk/buy-for-your-school/guidance/school-survey.html</a>."
         }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
