@@ -4,20 +4,20 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="POST" action="resume-email">
+      <form method="POST" action="resume-catering-task-list">
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "What email address did you use?",
+            text: "What telephone number do you want to share with suppliers?",
             classes: "govuk-label--l",
             isPageHeading: true
           },
           hint: {
-            text: "We asked you for an email address when you first created your plan. This is normally your school email address."
+            html: "We recommend sharing your school's telephone number."
           },
-          id: "resume-email",
-          name: "resume-email"
+          id: "supplier-contact-email",
+          name: "supplier-contact-email"
         }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}

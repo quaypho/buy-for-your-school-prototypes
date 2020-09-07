@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="non-linear-contract-aims">
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {{ govukTextarea({
+          name: "supplier-contact-post",
+          id: "supplier-contact-post",
+          label: {
+            text: "What are your goals or aims for this catering service?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Find out what staff, governors and students want from a new catering service."
+          }
+        }) }}
+
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+        {{ govukDetails({
+          summaryText: "Help with this question",
+          html: "You may want to speak to the headteacher, governors and parent teachers association to find out what they want from a new catering contract. This may also help identify what key performance indicators (KPIs) you can use to monitor the new contract.<br /><br/>
+                It may be useful to ask the students what they think of the current catering services and what their needs are. This can be done through a student survey. More information can be found here <a href='www.gov.uk/buy-for-your-school/guidance/school-survey.html' class='govuk-link'>www.gov.uk/buy-for-your-school/guidance/school-survey.html</a>."
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+          govukButton({
+            text: "Continue",
+            preventDoubleClick: true
+          })
+        }}
+        {{ govukButton({
+          text: "Save and continue later",
+          classes: "govuk-button--secondary"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

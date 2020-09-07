@@ -4,21 +4,21 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="POST" action="resume-email">
+      <form method="POST" action="non-linear-procurement-authorisers">
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
-        {{ govukInput({
-          label: {
-            text: "What email address did you use?",
-            classes: "govuk-label--l",
-            isPageHeading: true
-          },
-          hint: {
-            text: "We asked you for an email address when you first created your plan. This is normally your school email address."
-          },
-          id: "resume-email",
-          name: "resume-email"
-        }) }}
+      {{ govukInput({
+        label: {
+          text: "Who in your school knows the most about what the service needs to do?",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        hint: {
+          text: "This might be the person who managed any previous catering contract."
+        },
+        id: "domain-expert",
+        name: "domain-expert"
+      }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
 

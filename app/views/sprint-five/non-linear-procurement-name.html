@@ -4,20 +4,20 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="POST" action="resume-email">
+      <form method="POST" action="non-linear-check-your-answers">
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "What email address did you use?",
+            text: "How will you refer internally to this procurement?",
             classes: "govuk-label--l",
             isPageHeading: true
           },
           hint: {
-            text: "We asked you for an email address when you first created your plan. This is normally your school email address."
+            html: "Give a short meaningful name that can be used to identify the procurement. This name is only for your reference."
           },
-          id: "resume-email",
-          name: "resume-email"
+          id: "procurement-name",
+          name: "procurement-name"
         }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
