@@ -67,32 +67,24 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <dt class="govuk-summary-list__key govuk-summary-list__wide">
-                      <a href="non-linear-supplier-communication" aria-describedby="eligibility-status">
-                        What does the current or previous catering supplier offer?
-                      </a>
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                        {% if data['specifyPreviousContract'] == 'Not started'%}
-                          <strong class="govuk-tag govuk-tag--grey">Not started</strong>
-                        {% endif %}
+                  <a href="non-linear-previous-supplier" aria-describedby="eligibility-status">
+                    What does the current or previous catering supplier offer?
+                  </a>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {% if data['specifyPreviousContract'] == 'Not started'%}
+                      <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                    {% endif %}
 
-                        {% if data['specifyPreviousContract'] == 'In progress'%}
-                          <strong class="govuk-tag govuk-tag--blue">In progress</strong>
-                        {% endif %}
+                    {% if data['specifyPreviousContract'] == 'In progress'%}
+                      <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+                    {% endif %}
 
-                        {% if data['specifyPreviousContract'] == 'Completed'%}
-                          <strong class="govuk-tag">Completed</strong>
-                        {% endif %}
-                    </dd>
+                    {% if data['specifyPreviousContract'] == 'Completed'%}
+                      <strong class="govuk-tag">Completed</strong>
+                    {% endif %}
+                </dd>
               </span>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-status">
-                  About your school
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
             </li>
           </ul>
         </li>
@@ -105,41 +97,65 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <dt class="govuk-summary-list__key govuk-summary-list__wide">
-                      <a href="non-linear-facilities-available" aria-describedby="eligibility-status">
-                        What facilities will be available to the new supplier?
-                      </a>
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                        {% if data['specifyFacilitiesAvailable'] == 'Not started'%}
-                          <strong class="govuk-tag govuk-tag--grey">Not started</strong>
-                        {% endif %}
+                  <a href="non-linear-facilities-available" aria-describedby="eligibility-status">
+                    What facilities will be available to the new supplier?
+                  </a>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {% if data['specifyFacilitiesAvailable'] == 'Not started'%}
+                      <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                    {% endif %}
 
-                        {% if data['specifyFacilitiesAvailable'] == 'In progress'%}
-                          <strong class="govuk-tag govuk-tag--blue">In progress</strong>
-                        {% endif %}
+                    {% if data['specifyFacilitiesAvailable'] == 'In progress'%}
+                      <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+                    {% endif %}
 
-                        {% if data['specifyFacilitiesAvailable'] == 'Completed'%}
-                          <strong class="govuk-tag">Completed</strong>
-                        {% endif %}
-                    </dd>
+                    {% if data['specifyFacilitiesAvailable'] == 'Completed'%}
+                      <strong class="govuk-tag">Completed</strong>
+                    {% endif %}
+                </dd>
               </span>
 
             </li>
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-status">
-                  Food requirements
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Not started</strong>
+              <dt class="govuk-summary-list__key govuk-summary-list__wide">
+                <a href="non-linear-food-requirements" aria-describedby="contact-details-status">
+                  Food requirements for the school
+                  </a>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {% if data['specifyFoodRequirements'] == 'Not started'%}
+                      <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                    {% endif %}
+
+                    {% if data['specifyFoodRequirements'] == 'In progress'%}
+                      <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+                    {% endif %}
+
+                    {% if data['specifyFoodRequirements'] == 'Completed'%}
+                      <strong class="govuk-tag">Completed</strong>
+                    {% endif %}
+                </dd>
             </li>
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-status">
+              <dt class="govuk-summary-list__key govuk-summary-list__wide">
+                <a href="non-linear-contract-aims" aria-describedby="contact-details-status">
                   Aims for the catering service
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Not started</strong>
+              </a>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  {% if data['specifyContractAims'] == 'Not started'%}
+                    <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                  {% endif %}
+
+                  {% if data['specifyContractAims'] == 'In progress'%}
+                    <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+                  {% endif %}
+
+                  {% if data['specifyContractAims'] == 'Completed'%}
+                    <strong class="govuk-tag">Completed</strong>
+                  {% endif %}
+              </dd>
             </li>
           </ul>
         </li>
