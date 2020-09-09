@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="non-linear-food-requirements">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        idPrefix: "meals-required",
+        name: "meals-required",
+        fieldset: {
+          legend: {
+            text: "What meals need to be provided?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select all that apply."
+        },
+        items: [
+          {
+            value: "Breakfast",
+            text: "Breakfast"
+          },
+          {
+            value: "Morning snack",
+            text: "Morning snack"
+          },
+          {
+            value: "Midday meal",
+            text: "Midday meal"
+          },
+          {
+            value: "Afternoon snack",
+            text: "Afternoon snack"
+          },
+          {
+            value: "After school snack",
+            text: "After school snack"
+          }
+        ]
+      }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+          govukButton({
+            text: "Continue",
+            preventDoubleClick: true
+          })
+        }}
+        {{ govukButton({
+          text: "Save and continue later",
+          classes: "govuk-button--secondary"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

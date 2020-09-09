@@ -9,6 +9,8 @@ const contentfulClient = contentful.createClient({
 
 // Add your routes here - above the module.exports line
 
+//Sprint 5 start
+
 //Set initial variables
 router.get("/sprint-five/non-linear-start", function(req, res){
   res.render("sprint-five/non-linear-start")
@@ -154,6 +156,152 @@ router.post("/sprint-five/non-linear-contract-aims", function(req, res) {
 });
 
 //Sprint 5 non-linear End
+
+//Sprint 6 Start
+
+//Set initial variables
+router.get("/sprint-six/non-linear-start", function(req, res){
+  res.render("sprint-six/non-linear-start")
+  req.session.data.specifyContactInformation = "Not started"
+  req.session.data.specifyPreviousContract = "Not started"
+  req.session.data.specifyFacilitiesAvailable = "Not started"
+  req.session.data.specifyFoodRequirements = "Not started"
+  req.session.data.specifyContractAims = "Not started"
+  req.session.data.specifyProcurementName = "No name given"
+});
+
+router.get("/sprint-six/resume-or-new", function(req, res) {
+  res.render("sprint-six/resume-or-new");
+});
+
+router.post("/sprint-six/resume-or-new", function(req, res) {
+  let resumeExisting = req.session.data["resume-existing"];
+
+  if (resumeExisting === "Resume an existing procurement plan") {
+    res.redirect("/sprint-six/resume-email");
+  } else {
+    res.redirect("/sprint-four/step-by-step");
+  }
+});
+
+router.get("/sprint-six/resume-email-code", function(req, res) {
+  res.render("sprint-six/resume-email-code");
+  req.session.data.specifyContactInformation = "Completed"
+  req.session.data.specifyPreviousContract = "Not started"
+  req.session.data.specifyFacilitiesAvailable = "In progress"
+  req.session.data.specifyFoodRequirements = "Not started"
+  req.session.data.specifyContractAims = "Not started"
+});
+
+router.post("/sprint-six/resume-email-code", function(req, res) {
+  res.redirect("/sprint-six/non-linear-step-by-step");
+});
+
+router.get("/sprint-six/non-linear-resume-or-new", function(req, res) {
+  res.render("sprint-six/non-linear-resume-or-new");
+});
+
+router.post("/sprint-six/non-linear-resume-or-new", function(req, res) {
+  let nonLinearResumeExisting = req.session.data["non-linear-resume-existing"];
+
+  if (nonLinearResumeExisting === "Yes - resume my existing procurement") {
+    res.redirect("/sprint-six/resume-email");
+  } else {
+    res.redirect("/sprint-six/non-linear-goods-or-service");
+  }
+});
+
+router.get("/sprint-six/resume-email", function(req, res) {
+  res.render("sprint-six/resume-email");
+});
+
+router.post("/sprint-six/resume-email", function(req, res) {
+  res.redirect("/sprint-six/resume-email-code");
+});
+
+router.get("/sprint-six/non-linear-step-by-step", function(req, res) {
+  res.render("sprint-six/non-linear-step-by-step");
+});
+
+router.get("/sprint-six/non-linear-supplier-communication", function(req, res) {
+  res.render("sprint-six/non-linear-supplier-communication");
+  req.session.data.specifyContactInformation = "In progress"
+});
+
+router.post("/sprint-six/non-linear-supplier-communication", function(req, res) {
+  let nonLinearSupplierCommunication = req.session.data["supplier-communication-methods"];
+
+  req.session.data.specifyContactInformation = "Completed"
+
+  if (nonLinearSupplierCommunication === "Email") {
+    res.redirect("/sprint-six/non-linear-supplier-email");
+  }
+  if (nonLinearSupplierCommunication === "Post") {
+    res.redirect("/sprint-six/non-linear-supplier-post");
+  }
+  if (nonLinearSupplierCommunication === "Telephone") {
+    res.redirect("/sprint-six/non-linear-supplier-telephone");
+  }
+
+});
+
+router.get("/sprint-six/non-linear-facilities-available", function(req, res) {
+  res.render("sprint-six/non-linear-facilities-available");
+  req.session.data.specifyFacilitiesAvailable = "In progress"
+});
+
+router.post("/sprint-six/non-linear-facilities-available", function(req, res) {
+  res.redirect("/sprint-six/non-linear-heavy-goods");
+});
+
+router.get("/sprint-six/non-linear-heavy-goods", function(req, res) {
+  res.render("sprint-six/non-linear-heavy-goods");
+});
+
+router.post("/sprint-six/non-linear-heavy-goods", function(req, res) {
+  res.redirect("/sprint-six/non-linear-table-goods");
+});
+
+router.get("/sprint-six/non-linear-table-goods", function(req, res) {
+  res.render("sprint-six/non-linear-table-goods");
+});
+
+router.post("/sprint-six/non-linear-table-goods", function(req, res) {
+  req.session.data.specifyFacilitiesAvailable = "Completed"
+  res.redirect("/sprint-six/non-linear-step-2-task-list");
+});
+
+router.get("/sprint-six/non-linear-previous-supplier", function(req, res) {
+  res.render("sprint-six/non-linear-previous-supplier");
+  req.session.data.specifyPreviousContract = "In progress"
+});
+
+router.post("/sprint-six/non-linear-previous-supplier", function(req, res) {
+  req.session.data.specifyPreviousContract = "Completed"
+  res.redirect("/sprint-six/non-linear-step-2-task-list");
+});
+
+router.get("/sprint-six/non-linear-food-requirements", function(req, res) {
+  res.render("sprint-six/non-linear-food-requirements");
+  req.session.data.specifyFoodRequirements = "In progress"
+});
+
+router.post("/sprint-six/non-linear-food-requirements", function(req, res) {
+  req.session.data.specifyFoodRequirements = "Completed"
+  res.redirect("/sprint-six/non-linear-step-2-task-list");
+});
+
+router.get("/sprint-six/non-linear-contract-aims", function(req, res) {
+  res.render("sprint-six/non-linear-contract-aims");
+  req.session.data.specifyContractAims = "In progress"
+});
+
+router.post("/sprint-six/non-linear-contract-aims", function(req, res) {
+  req.session.data.specifyContractAims = "Completed"
+  res.redirect("/sprint-six/non-linear-step-2-task-list");
+});
+
+//Sprint 6 End
 
 //Contentful settings
 

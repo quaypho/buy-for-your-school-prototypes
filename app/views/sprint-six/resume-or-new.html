@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="resume-or-new">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "resume-existing",
+        name: "resume-existing",
+        fieldset: {
+          legend: {
+            text: "Do you want to resume an existing procurement plan or start planning a new procurement?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Resume an existing procurement plan",
+            text: "Resume an existing procurement plan"
+          },
+          {
+            value: "Start planning a new procurement",
+            text: "Start planning a new procurement"
+          }
+        ]
+      }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+          govukButton({
+            text: "Continue",
+            preventDoubleClick: true
+          })
+        }}
+        {{ govukButton({
+          text: "Save and continue later",
+          classes: "govuk-button--secondary"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

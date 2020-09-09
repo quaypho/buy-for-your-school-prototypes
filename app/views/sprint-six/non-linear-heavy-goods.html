@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="non-linear-heavy-goods">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What heavy goods are available to the new supplier?
+            </h1>
+          </legend>
+          <div id="waste-hint" class="govuk-hint">
+            Heavy goods are things like cooker, fridges and dishwashers.<br/><br/>
+            You have previously identified {{data["domain-expert"]}} as a person who know about the currently {{data["category-of-spend"]}} contract.
+          </div>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="heavy-goods-1" name="heavy-goods" type="checkbox" value="Fridge units">
+              <label class="govuk-label govuk-checkboxes__label" for="heavy-goods-1">
+                Fridge units
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="heavy-goods-2" name="heavy-goods" type="checkbox" value="Freezer units">
+              <label class="govuk-label govuk-checkboxes__label" for="heavy-goods-2">
+                Freezer units
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="heavy-goods-3" name="heavy-goods" type="checkbox" value="Dishwashers">
+              <label class="govuk-label govuk-checkboxes__label" for="heavy-goods-3">
+                Dishwashers
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="heavy-goods-4" name="heavy-goods" type="checkbox" value="Cooking hobs">
+              <label class="govuk-label govuk-checkboxes__label" for="heavy-goods-4">
+                Cooking hobs
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="heavy-goods-5" name="heavy-goods" type="checkbox" value="Ovens">
+              <label class="govuk-label govuk-checkboxes__label" for="heavy-goods-5">
+                Ovens
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="heavy-goods-6" name="heavy-goods" type="checkbox" value="Food serving counter">
+              <label class="govuk-label govuk-checkboxes__label" for="heavy-goods-6">
+                Food serving counter
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="heavy-goods-7" name="heavy-goods" type="checkbox" value="Food warmers">
+              <label class="govuk-label govuk-checkboxes__label" for="heavy-goods-7">
+                Food warmers
+              </label>
+            </div>
+
+        </fieldset>
+      </div>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with this question
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Understanding what the school and the current supplier own can
+        be complicated. You may want to start off by asking the existing supplier
+        for an inventory of the table goods that shows what the school and supplier
+        own.
+        <br/><br/>
+        You have identified {{ data["domain-expert"] }} as the person to speak
+        to about the current contract. They may also be able to help answer this
+        question.
+        </div>
+      </details>
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{
+          govukButton({
+            text: "Continue",
+            preventDoubleClick: true
+          })
+        }}
+        {{ govukButton({
+          text: "Save and continue later",
+          classes: "govuk-button--secondary"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
