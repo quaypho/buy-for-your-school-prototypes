@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-panel govuk-panel--interruption">
+      <form method="POST" action="non-linear-goods-or-service">
+        <fieldset class="govuk-fieldset" aria-describedby="start_new_claim">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-heading-xl" id="start_new_claim">
+              You are starting a new procurement
+            </h1>
+          </legend>
+
+          <h2 class="govuk-heading-m">
+            Complete step 1 plan how to buy for your school.
+          </h2>
+
+          <p class="govuk-body">First you need to complete step 1, plan how to buy for
+          your school.</p>
+
+          <p class="govuk-body">This will help you to get an understanding of what
+          you need to do, who you will need to invlove in this process, and the
+          things you will need to think about so that you can complete the later
+          steps.</p>
+
+          <p class="govuk-body">Once you have completed this step you will then
+          be able to start working on the rest of the procurement process in
+          whatever order works for you.</p>
+
+        </fieldset>
+
+
+       {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

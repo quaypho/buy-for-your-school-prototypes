@@ -168,6 +168,7 @@ router.get("/sprint-six/non-linear-start", function(req, res){
   req.session.data.specifyFoodRequirements = "Not started"
   req.session.data.specifyContractAims = "Not started"
   req.session.data.specifyProcurementName = "No name given"
+  req.session.data.stepTwoStatus = "Not started"
 });
 
 router.get("/sprint-six/resume-or-new", function(req, res) {
@@ -191,6 +192,7 @@ router.get("/sprint-six/resume-email-code", function(req, res) {
   req.session.data.specifyFacilitiesAvailable = "In progress"
   req.session.data.specifyFoodRequirements = "Not started"
   req.session.data.specifyContractAims = "Not started"
+  req.session.data.stepTwoStatus = "Not Started"
 });
 
 router.post("/sprint-six/resume-email-code", function(req, res) {
@@ -221,6 +223,14 @@ router.post("/sprint-six/resume-email", function(req, res) {
 
 router.get("/sprint-six/non-linear-step-by-step", function(req, res) {
   res.render("sprint-six/non-linear-step-by-step");
+});
+
+router.get("/sprint-six/non-linear-step-2-task-list", function(req, res) {
+  let stepTwoStatus = req.session.data.stepTwoStatus
+  res.render("sprint-six/non-linear-step-2-task-list");
+  if (stepTwoStatus !== "Completed"){
+    req.session.data.stepTwoStatus = "In progress"
+  }
 });
 
 router.get("/sprint-six/non-linear-supplier-communication", function(req, res) {
@@ -298,6 +308,7 @@ router.get("/sprint-six/non-linear-contract-aims", function(req, res) {
 
 router.post("/sprint-six/non-linear-contract-aims", function(req, res) {
   req.session.data.specifyContractAims = "Completed"
+  req.session.data.stepTwoStatus = "Completed"
   res.redirect("/sprint-six/non-linear-step-2-task-list");
 });
 
