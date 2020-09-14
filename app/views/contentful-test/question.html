@@ -9,21 +9,23 @@
     <div class="govuk-grid-column-two-thirds">
       <form method="POST" action="answer">
 
-        {{ govukRadios({
-          idPrefix: "next-slug",
-          name: "next-slug",
-          fieldset: {
-            legend: {
-              text: title,
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          hint: {
-            text: helpText
-          },
-          items: options
-        }) }}
+        {% if type == "radios" %}
+          {{ govukRadios({
+            idPrefix: "next-slug",
+            name: "next-slug",
+            fieldset: {
+              legend: {
+                text: title,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              text: helpText
+            },
+            items: options
+          }) }}
+        {% endif %}
 
 
         {{ govukButton({

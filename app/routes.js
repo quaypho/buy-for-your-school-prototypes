@@ -342,14 +342,14 @@ router.get("/contentful-test/:slug", async (req, res) => {
     return;
   }
 
-  const { title, helpText, next } = question.fields;
+  const { title, helpText, type, next } = question.fields;
 
-  const options = question.fields.options.map((option) => ({
+  const options = (question.fields.options || []).map((option) => ({
     value: (option.fields.next || next).fields.slug,
     text: option.fields.label,
   }));
 
-  res.render("contentful-test/question", { title, helpText, options });
+  res.render("contentful-test/question", { title, helpText, type, options });
 });
 
 router.post("/contentful-test/answer", (req, res) => {
