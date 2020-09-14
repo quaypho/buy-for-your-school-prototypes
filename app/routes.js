@@ -325,34 +325,55 @@ async function findContentBySlug(type, slug) {
   return entries.items.find((entry) => entry.fields.slug === slug);
 }
 
+async function findDecisionBySlug(slug) {
+  return await findContentBySlug("decision", slug);
+}
+
 async function findQuestionBySlug(slug) {
   return await findContentBySlug("question", slug);
 }
 
-async function findPageBySlug(slug) {
+async function findUnmanagedPageBySlug(slug) {
   return await findContentBySlug("unmanagedPage", slug);
 }
 
-router.get("/contentful-test/:slug", async (req, res) => {
+async function getDecision(req, res) {
+  const decision = await findDecisionBySlug(`/${req.params.slug}`);
+
+  if (!decision) {
+    return false;
+  }
+
+  const { slug, title, helpText } = decision.fields;
+
+  const options = (decision.fields.options || []).map((option) => ({
+    value: option.fields.label,
+    text: option.fields.label,
+  }));
+
+  res.render("contentful-test/question", {
+    slug,
+    title,
+    helpText,
+    type: "radios",
+    options,
+  });
+
+  return true;
+}
+
+async function getQuestion(req, res) {
   const question = await findQuestionBySlug(`/${req.params.slug}`);
 
   if (!question) {
-    const page = await findPageBySlug(`/${req.params.slug}`);
-
-    if (!page) {
-      res.sendStatus(404);
-      return;
-    }
-
-    res.render(`contentful-test${page.fields.slug}`);
-    return;
+    return false;
   }
 
   const { slug, title, helpText, type } = question.fields;
 
   const options = (question.fields.options || []).map((option) => ({
-    value: option.fields.label,
-    text: option.fields.label,
+    value: option,
+    text: option,
   }));
 
   res.render("contentful-test/question", {
@@ -362,34 +383,68 @@ router.get("/contentful-test/:slug", async (req, res) => {
     type,
     options,
   });
+
+  return true;
+}
+
+async function getUnmanagedPage(req, res) {
+  const page = await findUnmanagedPageBySlug(`/${req.params.slug}`);
+
+  if (!page) {
+    return false;
+  }
+
+  res.render(`contentful-test${page.fields.slug}`);
+
+  return true;
+}
+
+router.get("/contentful-test/:slug", async (req, res) => {
+  if (await getDecision(req, res)) {
+    return;
+  }
+
+  if (await getQuestion(req, res)) {
+    return;
+  }
+
+  if (await getUnmanagedPage(req, res)) {
+    return;
+  }
+
+  res.sendStatus(404);
 });
 
 router.post("/contentful-test/answer", async (req, res) => {
   const { slug, answer } = req.body;
 
+  const decision = await findDecisionBySlug(slug);
+
+  if (decision) {
+    req.session.data.answers.push({ question: decision.fields.title, answer });
+
+    const choice = decision.fields.options.find(
+      (option) => option.fields.label === answer
+    );
+
+    const nextSlug = choice.fields.next.fields.slug;
+
+    res.redirect(`/contentful-test${nextSlug}`);
+    return;
+  }
+
   const question = await findQuestionBySlug(slug);
 
-  if (!question) {
-    res.sendStatus(500);
+  if (question) {
+    req.session.data.answers.push({ question: question.fields.title, answer });
+
+    const nextSlug = question.fields.next.fields.slug;
+
+    res.redirect(`/contentful-test${nextSlug}`);
     return;
   }
 
-  const chosenOption = (question.fields.options || []).find(
-    (option) => option.fields.label === answer
-  );
-  const nextPage =
-    (chosenOption && chosenOption.fields.next) || question.fields.next;
-
-  if (!nextPage) {
-    res.sendStatus(500);
-    return;
-  }
-
-  req.session.data.answers.push({ question: question.fields.title, answer });
-
-  const nextSlug = nextPage.fields.slug;
-
-  res.redirect(`/contentful-test${nextSlug}`);
+  res.sendStatus(500);
 });
 
 module.exports = router
