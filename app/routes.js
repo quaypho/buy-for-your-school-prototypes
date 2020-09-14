@@ -316,22 +316,28 @@ router.post("/sprint-six/non-linear-contract-aims", function(req, res) {
 
 //Contentful settings
 
-router.get("/contentful-test/:slug", async (req, res) => {
-  const questionEntries = await contentfulClient.getEntries({
-    content_type: "question",
-    include: 2
+async function findContentBySlug(type, slug) {
+  const entries = await contentfulClient.getEntries({
+    content_type: type,
+    include: 2,
   });
-  const question = questionEntries.items.find(
-    (entry) => entry.fields.slug === `/${req.params.slug}`
-  );
+
+  return entries.items.find((entry) => entry.fields.slug === slug);
+}
+
+async function findQuestionBySlug(slug) {
+  return await findContentBySlug("question", slug);
+}
+
+async function findPageBySlug(slug) {
+  return await findContentBySlug("unmanagedPage", slug);
+}
+
+router.get("/contentful-test/:slug", async (req, res) => {
+  const question = await findQuestionBySlug(`/${req.params.slug}`);
 
   if (!question) {
-    const pageEntries = await contentfulClient.getEntries({
-      content_type: "unmanagedPage",
-    });
-    const page = pageEntries.items.find(
-      (entry) => entry.fields.slug === `/${req.params.slug}`
-    );
+    const page = await findPageBySlug(`/${req.params.slug}`);
 
     if (!page) {
       res.sendStatus(404);
@@ -342,18 +348,46 @@ router.get("/contentful-test/:slug", async (req, res) => {
     return;
   }
 
-  const { title, helpText, type, next } = question.fields;
+  const { slug, title, helpText, type } = question.fields;
 
   const options = (question.fields.options || []).map((option) => ({
-    value: (option.fields.next || next).fields.slug,
+    value: option.fields.label,
     text: option.fields.label,
   }));
 
-  res.render("contentful-test/question", { title, helpText, type, options });
+  res.render("contentful-test/question", {
+    slug,
+    title,
+    helpText,
+    type,
+    options,
+  });
 });
 
-router.post("/contentful-test/answer", (req, res) => {
-  res.redirect(`/contentful-test${req.body["next-slug"]}`);
+router.post("/contentful-test/answer", async (req, res) => {
+  const { slug, answer } = req.body;
+
+  const question = await findQuestionBySlug(slug);
+
+  if (!question) {
+    res.sendStatus(500);
+    return;
+  }
+
+  const chosenOption = (question.fields.options || []).find(
+    (option) => option.fields.label === answer
+  );
+  const nextPage =
+    (chosenOption && chosenOption.fields.next) || question.fields.next;
+
+  if (!nextPage) {
+    res.sendStatus(500);
+    return;
+  }
+
+  const nextSlug = nextPage.fields.slug;
+
+  res.redirect(`/contentful-test${nextSlug}`);
 });
 
 module.exports = router

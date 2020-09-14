@@ -9,10 +9,12 @@
     <div class="govuk-grid-column-two-thirds">
       <form method="POST" action="answer">
 
+        <input name="slug" type="hidden" value="{{slug}}">
+
         {% if type == "radios" %}
           {{ govukRadios({
-            idPrefix: "next-slug",
-            name: "next-slug",
+            idPrefix: "answer",
+            name: "answer",
             fieldset: {
               legend: {
                 text: title,
@@ -26,7 +28,6 @@
             items: options
           }) }}
         {% endif %}
-
 
         {{ govukButton({
           text: "Continue",
