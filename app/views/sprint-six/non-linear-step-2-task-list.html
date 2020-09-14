@@ -199,6 +199,17 @@
                   </dd>
                 </span>
               {% endif %}
+              {% if data['stepTwoStatus'] == 'Not started'%}
+                <span class="app-task-list__task-name">
+                  <dt class="govuk-summary-list__key govuk-summary-list__wide">
+                      Your {{data["procurement-name"]}} specification will be available
+                      when you have completed one or more sections.
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                  </dd>
+                </span>
+              {% endif %}
 
             </li>
           </ul>
