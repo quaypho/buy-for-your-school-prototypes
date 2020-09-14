@@ -181,7 +181,7 @@ router.post("/sprint-six/resume-or-new", function(req, res) {
   if (resumeExisting === "Resume an existing procurement plan") {
     res.redirect("/sprint-six/resume-email");
   } else {
-    res.redirect("/sprint-four/step-by-step");
+    res.redirect("/sprint-six/non-linear-new-procurement");
   }
 });
 
