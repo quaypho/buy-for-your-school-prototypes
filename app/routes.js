@@ -2,11 +2,6 @@ const contentful = require("contentful");
 const express = require('express')
 const router = express.Router()
 
-const contentfulClient = contentful.createClient({
-  space: "jspwts36h1os",
-  accessToken: "TRhCuyh6kpjMf9Sx8siWHpUEVsvbca9XtXdj2NmwJ8A"
-});
-
 // Add your routes here - above the module.exports line
 
 //Sprint 5 start
@@ -316,8 +311,22 @@ router.post("/sprint-six/non-linear-contract-aims", function(req, res) {
 
 //Contentful settings
 
-async function findContentBySlug(type, slug) {
-  const entries = await contentfulClient.getEntries({
+const deliveryContentfulClient = contentful.createClient({
+  space: "jspwts36h1os",
+  accessToken: "TRhCuyh6kpjMf9Sx8siWHpUEVsvbca9XtXdj2NmwJ8A",
+});
+
+const previewContentfulClient = contentful.createClient({
+  host: "preview.contentful.com",
+  space: "jspwts36h1os",
+  accessToken: "_MV7pJk5wXHXbxo0NaZTF11VBIM_12niLtp1Ki7iOKM",
+});
+
+async function findContentBySlug(type, slug, preview = false) {
+  const entries = await (preview
+    ? previewContentfulClient
+    : deliveryContentfulClient
+  ).getEntries({
     content_type: type,
     include: 2,
   });
@@ -325,20 +334,20 @@ async function findContentBySlug(type, slug) {
   return entries.items.find((entry) => entry.fields.slug === slug);
 }
 
-async function findDecisionBySlug(slug) {
-  return await findContentBySlug("decision", slug);
+async function findDecisionBySlug(slug, preview = false) {
+  return await findContentBySlug("decision", slug, preview);
 }
 
-async function findQuestionBySlug(slug) {
-  return await findContentBySlug("question", slug);
+async function findQuestionBySlug(slug, preview = false) {
+  return await findContentBySlug("question", slug, preview);
 }
 
-async function findUnmanagedPageBySlug(slug) {
-  return await findContentBySlug("unmanagedPage", slug);
+async function findUnmanagedPageBySlug(slug, preview = false) {
+  return await findContentBySlug("unmanagedPage", slug, preview);
 }
 
 async function getDecision(req, res) {
-  const decision = await findDecisionBySlug(`/${req.params.slug}`);
+  const decision = await findDecisionBySlug(`/${req.params.slug}`, req.url.includes("/preview/"));
 
   if (!decision) {
     return false;
@@ -363,7 +372,7 @@ async function getDecision(req, res) {
 }
 
 async function getQuestion(req, res) {
-  const question = await findQuestionBySlug(`/${req.params.slug}`);
+  const question = await findQuestionBySlug(`/${req.params.slug}`, req.url.includes("/preview/"));
 
   if (!question) {
     return false;
@@ -388,7 +397,7 @@ async function getQuestion(req, res) {
 }
 
 async function getUnmanagedPage(req, res) {
-  const page = await findUnmanagedPageBySlug(`/${req.params.slug}`);
+  const page = await findUnmanagedPageBySlug(`/${req.params.slug}`, req.url.includes("/preview/"));
 
   if (!page) {
     return false;
@@ -399,7 +408,7 @@ async function getUnmanagedPage(req, res) {
   return true;
 }
 
-router.get("/contentful-test/:slug", async (req, res) => {
+router.get("/contentful-test(/preview)?/:slug", async (req, res) => {
   if (await getDecision(req, res)) {
     return;
   }
@@ -415,10 +424,13 @@ router.get("/contentful-test/:slug", async (req, res) => {
   res.sendStatus(404);
 });
 
-router.post("/contentful-test/answer", async (req, res) => {
+router.post("/contentful-test(/preview)?/answer", async (req, res) => {
   const { slug, answer } = req.body;
 
-  const decision = await findDecisionBySlug(slug);
+  const preview = req.url.includes("/preview/");
+  const urlPrefix = `/contentful-test${preview ? "/preview" : ""}`
+
+  const decision = await findDecisionBySlug(slug, preview);
 
   if (decision) {
     req.session.data.answers.push({ question: decision.fields.title, answer });
@@ -429,18 +441,18 @@ router.post("/contentful-test/answer", async (req, res) => {
 
     const nextSlug = choice.fields.next.fields.slug;
 
-    res.redirect(`/contentful-test${nextSlug}`);
+    res.redirect(`${urlPrefix}${nextSlug}`);
     return;
   }
 
-  const question = await findQuestionBySlug(slug);
+  const question = await findQuestionBySlug(slug, preview);
 
   if (question) {
     req.session.data.answers.push({ question: question.fields.title, answer });
 
     const nextSlug = question.fields.next.fields.slug;
 
-    res.redirect(`/contentful-test${nextSlug}`);
+    res.redirect(`${urlPrefix}${nextSlug}`);
     return;
   }
 
