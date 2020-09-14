@@ -342,10 +342,10 @@ router.get("/contentful-test/:slug", async (req, res) => {
     return;
   }
 
-  const { title, helpText } = question.fields;
+  const { title, helpText, next } = question.fields;
 
   const options = question.fields.options.map((option) => ({
-    value: option.fields.next.fields.slug,
+    value: (option.fields.next || next).fields.slug,
     text: option.fields.label,
   }));
 
