@@ -167,6 +167,42 @@
             </li>
           </ul>
         </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Documents
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              {% if data['stepTwoStatus'] == 'In progress'%}
+                <span class="app-task-list__task-name">
+                  <dt class="govuk-summary-list__key govuk-summary-list__wide">
+                    <a href="https://docs.google.com/document/d/1f0fUdCZyf98jnktzQ845KA7ykMMWHPV70CruuDqcBFQ/edit?usp=sharing" aria-describedby="eligibility-status">
+                      View {{data["procurement-name"]}} specification
+                    </a>
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+                  </dd>
+                </span>
+              {% endif %}
+
+              {% if data['stepTwoStatus'] == 'Completed'%}
+                <span class="app-task-list__task-name">
+                  <dt class="govuk-summary-list__key govuk-summary-list__wide">
+                    <a href="https://docs.google.com/document/d/1f0fUdCZyf98jnktzQ845KA7ykMMWHPV70CruuDqcBFQ/edit?usp=sharing" aria-describedby="eligibility-status">
+                      View {{data["procurement-name"]}} specification
+                    </a>
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <strong class="govuk-tag">Completed</strong>
+                  </dd>
+                </span>
+              {% endif %}
+
+            </li>
+          </ul>
+        </li>
       </ol>
 
      <a href="non-linear-step-by-step" role="button" draggable="false" class="govuk-button">
