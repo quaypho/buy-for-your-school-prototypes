@@ -1,0 +1,26 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">CMS test</h1>
+
+      <p class="govuk-body">
+        This journey is generated almost entirely from content managed by our CMS,
+        <a class="govuk-link" href="https://app.contentful.com/spaces/jspwts36h1os/home">
+          Contentful
+        </a>.
+      </p>
+
+      {{ govukButton({
+        text: "Start",
+        href: "what-are-you-buying",
+        isStartButton: true
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

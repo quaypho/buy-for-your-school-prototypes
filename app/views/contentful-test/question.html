@@ -1,5 +1,7 @@
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
 {% extends "layout.html" %}
 
@@ -9,22 +11,51 @@
     <div class="govuk-grid-column-two-thirds">
       <form method="POST" action="answer">
 
-        {{ govukRadios({
-          idPrefix: "next-slug",
-          name: "next-slug",
-          fieldset: {
-            legend: {
+        <input name="slug" type="hidden" value="{{slug}}">
+
+        {% if type == "radios" %}
+          {{ govukRadios({
+            idPrefix: "answer",
+            name: "answer",
+            fieldset: {
+              legend: {
+                text: title,
+                isPageHeading: true,
+                classes: "govuk-label--l"
+              }
+            },
+            hint: {
+              text: helpText
+            },
+            items: options
+          }) }}
+        {% elseif type == "short text" %}
+          {{ govukInput({
+            id: "answer",
+            name: "answer",
+            label: {
               text: title,
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              classes: "govuk-label--l"
+            },
+            hint: {
+              text: helpText
             }
-          },
-          hint: {
-            text: helpText
-          },
-          items: options
-        }) }}
-
+          }) }}
+        {% elseif type == "long text" %}
+          {{ govukTextarea({
+            id: "answer",
+            name: "answer",
+            label: {
+              text: title,
+              isPageHeading: true,
+              classes: "govuk-label--l"
+            },
+            hint: {
+              text: helpText
+            }
+          }) }}
+        {% endif %}
 
         {{ govukButton({
           text: "Continue",

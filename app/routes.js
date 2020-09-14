@@ -2,11 +2,6 @@ const contentful = require("contentful");
 const express = require('express')
 const router = express.Router()
 
-const contentfulClient = contentful.createClient({
-  space: "jspwts36h1os",
-  accessToken: "TRhCuyh6kpjMf9Sx8siWHpUEVsvbca9XtXdj2NmwJ8A"
-});
-
 // Add your routes here - above the module.exports line
 
 //Sprint 5 start
@@ -316,44 +311,152 @@ router.post("/sprint-six/non-linear-contract-aims", function(req, res) {
 
 //Contentful settings
 
-router.get("/contentful-test/:slug", async (req, res) => {
-  const questionEntries = await contentfulClient.getEntries({
-    content_type: "question",
-    include: 2
+const deliveryContentfulClient = contentful.createClient({
+  space: "jspwts36h1os",
+  accessToken: "TRhCuyh6kpjMf9Sx8siWHpUEVsvbca9XtXdj2NmwJ8A",
+});
+
+const previewContentfulClient = contentful.createClient({
+  host: "preview.contentful.com",
+  space: "jspwts36h1os",
+  accessToken: "_MV7pJk5wXHXbxo0NaZTF11VBIM_12niLtp1Ki7iOKM",
+});
+
+async function findContentBySlug(type, slug, preview = false) {
+  const entries = await (preview
+    ? previewContentfulClient
+    : deliveryContentfulClient
+  ).getEntries({
+    content_type: type,
+    include: 2,
   });
-  const question = questionEntries.items.find(
-    (entry) => entry.fields.slug === `/${req.params.slug}`
-  );
 
-  if (!question) {
-    const pageEntries = await contentfulClient.getEntries({
-      content_type: "unmanagedPage",
-    });
-    const page = pageEntries.items.find(
-      (entry) => entry.fields.slug === `/${req.params.slug}`
-    );
+  return entries.items.find((entry) => entry.fields.slug === slug);
+}
 
-    if (!page) {
-      res.sendStatus(404);
-      return;
-    }
+async function findDecisionBySlug(slug, preview = false) {
+  return await findContentBySlug("decision", slug, preview);
+}
 
-    res.render(`contentful-test${page.fields.slug}`);
-    return;
+async function findQuestionBySlug(slug, preview = false) {
+  return await findContentBySlug("question", slug, preview);
+}
+
+async function findUnmanagedPageBySlug(slug, preview = false) {
+  return await findContentBySlug("unmanagedPage", slug, preview);
+}
+
+async function getDecision(req, res) {
+  const decision = await findDecisionBySlug(`/${req.params.slug}`, req.url.includes("/preview/"));
+
+  if (!decision) {
+    return false;
   }
 
-  const { title, helpText } = question.fields;
+  const { slug, title, helpText } = decision.fields;
 
-  const options = question.fields.options.map((option) => ({
-    value: option.fields.next.fields.slug,
+  const options = (decision.fields.options || []).map((option) => ({
+    value: option.fields.label,
     text: option.fields.label,
   }));
 
-  res.render("contentful-test/question", { title, helpText, options });
+  res.render("contentful-test/question", {
+    slug,
+    title,
+    helpText,
+    type: "radios",
+    options,
+  });
+
+  return true;
+}
+
+async function getQuestion(req, res) {
+  const question = await findQuestionBySlug(`/${req.params.slug}`, req.url.includes("/preview/"));
+
+  if (!question) {
+    return false;
+  }
+
+  const { slug, title, helpText, type } = question.fields;
+
+  const options = (question.fields.options || []).map((option) => ({
+    value: option,
+    text: option,
+  }));
+
+  res.render("contentful-test/question", {
+    slug,
+    title,
+    helpText,
+    type,
+    options,
+  });
+
+  return true;
+}
+
+async function getUnmanagedPage(req, res) {
+  const page = await findUnmanagedPageBySlug(`/${req.params.slug}`, req.url.includes("/preview/"));
+
+  if (!page) {
+    return false;
+  }
+
+  res.render(`contentful-test${page.fields.slug}`);
+
+  return true;
+}
+
+router.get("/contentful-test(/preview)?/:slug", async (req, res) => {
+  if (await getDecision(req, res)) {
+    return;
+  }
+
+  if (await getQuestion(req, res)) {
+    return;
+  }
+
+  if (await getUnmanagedPage(req, res)) {
+    return;
+  }
+
+  res.sendStatus(404);
 });
 
-router.post("/contentful-test/answer", (req, res) => {
-  res.redirect(`/contentful-test${req.body["next-slug"]}`);
+router.post("/contentful-test(/preview)?/answer", async (req, res) => {
+  const { slug, answer } = req.body;
+
+  const preview = req.url.includes("/preview/");
+  const urlPrefix = `/contentful-test${preview ? "/preview" : ""}`
+
+  const decision = await findDecisionBySlug(slug, preview);
+
+  if (decision) {
+    req.session.data.answers.push({ question: decision.fields.title, answer });
+
+    const choice = decision.fields.options.find(
+      (option) => option.fields.label === answer
+    );
+
+    const nextSlug = choice.fields.next.fields.slug;
+
+    res.redirect(`${urlPrefix}${nextSlug}`);
+    return;
+  }
+
+  const question = await findQuestionBySlug(slug, preview);
+
+  if (question) {
+    req.session.data.answers.push({ question: question.fields.title, answer });
+
+    const nextSlug = question.fields.next.fields.slug;
+
+    res.redirect(`${urlPrefix}${nextSlug}`);
+    return;
+  }
+
+  res.sendStatus(500);
 });
 
 module.exports = router
