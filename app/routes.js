@@ -385,6 +385,8 @@ router.post("/contentful-test/answer", async (req, res) => {
     return;
   }
 
+  req.session.data.answers.push({ question: question.fields.title, answer });
+
   const nextSlug = nextPage.fields.slug;
 
   res.redirect(`/contentful-test${nextSlug}`);
