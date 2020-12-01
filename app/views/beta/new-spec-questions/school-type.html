@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a new specification
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "school-name"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="new-spec_interrupt" method="post" novalidate>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What type of school is {{data['school-name']}}?
+              </h1>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="type-of-school" name="type-of-school" type="radio" value="single">
+                <label class="govuk-label govuk-radios__label" for="type-of-school">
+                  Single school
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="type-of-school-2" name="type-of-school" type="radio" value="multiple">
+                <label class="govuk-label govuk-radios__label" for="type-of-school-2">
+                  Multi-school
+                </label>
+              </div>
+
+
+            </div>
+
+          </fieldset>
+        </div>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help with selecting a type of school
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            If the school that you are creating a specification for belongs to a group of schools, you should select multi-school. Otherwise select single school.
+          </div>
+        </details>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
