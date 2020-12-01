@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "dashboard"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Existing specifications
+    </h1>
+  </div>
+</div>
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#draft">
+        Draft specifications
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#completed">
+        Completed specifications
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-tabs__panel" id="draft">
+    <h2 class="govuk-heading-l">Draft specifications</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date started</th>
+          <th scope="col" class="govuk-table__header govuk-table__cell--numeric"> </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">28 November 2020</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">Review and edit</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">16 November 2020</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">Review and edit</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">25 October 2020</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">Review and edit</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="completed">
+    <h2 class="govuk-heading-l">Completed specifications</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date completed</th>
+          <th scope="col" class="govuk-table__header govuk-table__cell--numeric"> </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">14 September 2020</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">View and download</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">16 August 2020</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">View and download</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">3 July 2020</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">View and download</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
+{% endblock %}
