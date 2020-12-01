@@ -4,6 +4,14 @@
   Dashboard
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+{% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -22,10 +30,10 @@
   </div>
 
   <div class="govuk-grid-column-one-half">
-      <h2 class="govuk-heading-m">Create new specification</h2>
+      <h2 class="govuk-heading-m">Create a new specification</h2>
       <p class="govuk-body">Create a new specification for a catering procurement.</p>
       <ul class="govuk-list">
-        <li><a href="start_new-specification" class="govuk-link">Create new specification</a></li>
+        <li><a href="start_new-specification" class="govuk-link">Create a new specification</a></li>
       </ul>
   </div>
 

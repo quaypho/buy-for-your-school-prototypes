@@ -4,6 +4,14 @@
   Sign in
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+{% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
