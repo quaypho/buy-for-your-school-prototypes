@@ -1,179 +1,137 @@
 {% extends "layout.html" %}
 
+{% block pageTitle %}
+  Dashboard
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+{% endblock %}
+
 {% block content %}
 
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Prototypes for "{{serviceName}}"</h1>
+      <h1 class="govuk-heading-xl">
+      	<span class="govuk-caption-l">Buy for your school</span>
+      	Prototypes
+      </h1>
+
+      <p>If you are looking for the alpha prototypes, you can <a class="govuk-link govuk-link--no-visited-state" href="alpha-prototypes">find them here</a>.</p>
+
     </div>
   </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div style="border:5px solid SteelBlue; background: GhostWhite" class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+    	<h2 class="govuk-heading-l">
+    		Current phase
+    	</h2>
 
-  <h2 class="govuk-heading-l">Beta prototypes</h2>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-      <a href="beta/start" class="govuk-link">{{serviceName}}</a>
+    	<div class="govuk-grid-row govuk-!-margin-bottom-6">
+    		<div class="govuk-grid-column-one-half">
+          <h3 class="govuk-heading-s">
+            End-to-end created
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="beta/start">Service start page</a>
+            </li>
+          </ul>
+    		</div>
+
+        <div class="govuk-grid-column-one-half">
+
+        </div>
+    	</div>
     </div>
+    <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+  </div>
   </div>
 
-<br>
+<!--
+============================================================================
+Previous versions
+============================================================================
+-->
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Previous phases</h2>
 
-
-  <h2 class="govuk-heading-l">Alpha prototypes</h2>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-      <span class="govuk-caption-m">9 July 2020</span>
-      <h3 class="govuk-heading-m">Sprint 1</h3>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <ul class="govuk-list">
-        <li>
-          <a href="sprint-one/step-by-step" class="govuk-link">{{serviceName}}</a>
-        </li>
-        <li>
-          <a href="sprint-one/support-start-page" class="govuk-link">Step 1 - Identify the level of support you need for what you're buying</a>
-        </li>
-        <li>
-          <a href="sprint-one/support-start-page" class="govuk-link">Step 2 - Gather information on what you're buying</a>
-        </li>
-      </ul>
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            What's new?
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Use a step by step page to show users that this is part of a larger end-to-end journey</li>
-            <li>Help users identify their category of spend</li>
-            <li>Help users identify the level of support that they may need</li>
-            <li>Gather the requirements and needs to be able to support users creating a specification</li>
-          </ul>
+    <p class="govuk-body">No previous phases.</p>
+    <!-- <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default"><div class="govuk-accordion__controls"><button type="button" class="govuk-accordion__open-all" aria-expanded="false">Open all<span class="govuk-visually-hidden"> sections</span></button></div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+          <button type="button" id="accordion-default-heading-1" aria-controls="accordion-default-content-1" class="govuk-accordion__section-button" aria-expanded="false">
+              Phase 1
+            </button><span class="govuk-accordion__icon" aria-hidden="true"></span></h2>
         </div>
-      </details>
-      <h4 class="govuk-heading-s govuk-!-margin-bottom-1">User Research</h4>
-      <ul class="govuk-list">
-        <li>
-          <a href="https://miro.com/app/board/o9J_kpAMt-Y=/" class="govuk-link" target="_blank">Feedback</a>
-        </li>
-      </ul>
-    </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <div style="border:5px solid SteelBlue; background: GhostWhite" class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+                <h2 class="govuk-heading-l">
+                  Phase 1
+                </h2>
 
-    <div class="govuk-grid-column-one-third">
-      <span class="govuk-caption-m">12 August 2020</span>
-      <h3 class="govuk-heading-m">Sprint 4</h3>
+                <div class="govuk-grid-row govuk-!-margin-bottom-6">
+                  <div class="govuk-grid-column-one-half">
+                    <h3 class="govuk-heading-s">
+                      Employer journeys
+                    </h3>
+                    <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                      <li>
+              				  <a class="govuk-link govuk-link--no-visited-state" href="../../_versions/version-1/registration/start">Service start page</a>
+              				</li>
+                      <li>
+              					<a class="govuk-link govuk-link--no-visited-state" href="../../_versions/version-1/provider-led-registration/invitation-email">Provider-led invitation email</a>
+              				</li>
+                      <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="../../_versions/version-1/recruitment/recruitment-layout-options-start">Recruitment layout options</a>
+                      </li>
+                      <li>
+              					<a class="govuk-link govuk-link--no-visited-state" href="../../_versions/version-1/recruitment/recruitment-start">Recruitment homepage scenarios</a>
+              				</li>
+                      <li>
+              					<a class="govuk-link govuk-link--no-visited-state" href="../../_versions/version-1/provider-permissions/providers">Training provider permissions homepage (VC1-A)</a>
+              				</li>
+                      <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="../../_versions/version-1/recruitment/recruitment-vacancy-statuses">Recruitment - vacancy statuses (VC1-D)</a>
+                      </li>
+                    </ul>
+                  </div>
 
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <ul class="govuk-list">
-        <li>
-          <a href="sprint-four/step-by-step" class="govuk-link">{{serviceName}}</a>
-        </li>
-      </ul>
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            What's new?
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Use a step by step page to show users that this is part of a larger end-to-end journey</li>
-            <li>Help users identify their category of spend</li>
-            <li>Help users identify the level of support that they may need</li>
-            <li>Gather the requirements and needs to be able to support users creating a specification</li>
-          </ul>
+                  <div class="govuk-grid-column-one-half">
+                    <h3 class="govuk-heading-s">
+                      Provider journeys
+                    </h3>
+                    <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                      <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="../../_versions/version-1/recruitment/provider-view/rejected-vacancy">Vacancy rejected with employer comments (VC1-A)</a>
+                      </li>
+                      <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="../../_versions/version-1/recruitment/vacancy-created-start">Submit vacancy - permissions scenarios (VC1-B)</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </details>
-      <h4 class="govuk-heading-s govuk-!-margin-bottom-1">User Research</h4>
-      <ul class="govuk-list">
-        <li>
-          <a href="https://miro.com/app/board/o9J_knP80Jw=/" class="govuk-link" target="_blank">Feedback</a>
-        </li>
-      </ul>
-    </div>
+      </div>
 
-    <div class="govuk-grid-column-one-third">
-      <span class="govuk-caption-m">26 August 2020</span>
-      <h3 class="govuk-heading-m">Sprint 5</h3>
 
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <ul class="govuk-list">
-        <li>
-          <a href="sprint-five/resume-start" class="govuk-link">Resume procurement</a>
-        </li>
-        <li>
-          <a href="sprint-five/non-linear-start" class="govuk-link">Non-linear procurement</a>
-        </li>
-      </ul>
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            What's new?
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Show recovery via email address and code</li>
-            <li>Rework step-by-step and tasklist into single userflow</li>
-            <li>User can mark step as 'done' to update stats but keep it editable</li>
-            <li>Questions regrouped by task</li>
-          </ul>
-        </div>
-      </details>
-      <h4 class="govuk-heading-s govuk-!-margin-bottom-1">User Research</h4>
-      <ul class="govuk-list">
-        <li>
-          <a href="https://miro.com/app/board/o9J_kpAMt-Y=/" class="govuk-link" target="_blank">Feedback</a>
-        </li>
-      </ul>
-    </div>
-
+    </div> -->
   </div>
-    <div class="govuk-grid-row">
+</div>
 
-    <div class="govuk-grid-column-one-third">
-      <span class="govuk-caption-m">9 September 2020</span>
-      <h3 class="govuk-heading-m">Sprint 6</h3>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <ul class="govuk-list">
-        <li>
-          <a href="sprint-six/non-linear-start" class="govuk-link">Understanding the service</a>
-        </li>
-      </ul>
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            What's new?
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Something goes here</li>
-          </ul>
-        </div>
-      </details>
-      <h4 class="govuk-heading-s govuk-!-margin-bottom-1">User Research</h4>
-      <ul class="govuk-list">
-        <li>
-          <a href="https://miro.com/app/board/o9J_kpAMt-Y=/" class="govuk-link" target="_blank">Feedback</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="govuk-grid-column-one-third">
-      <h3 class="govuk-heading-m">CMS test</h3>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
-      <ul class="govuk-list">
-        <li>
-          <a href="contentful-test/start" class="govuk-link">
-            Start
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
 
 {% endblock %}
