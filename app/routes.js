@@ -459,4 +459,23 @@ router.post("/contentful-test(/preview)?/answer", async (req, res) => {
   res.sendStatus(500);
 });
 
+
+/*
+============================================================================
+Pre-ordering branching
+============================================================================
+*/
+router.post('/beta/questions/menus-ordering/pre-ordering/need-way-order', function (req, res) {
+
+  let needWay = req.session.data['need-way-order']
+
+  if (needWay === 'yes') {
+    res.redirect('/beta/questions/menus-ordering/pre-ordering/have-way-order')
+  } else {
+    res.redirect('/beta/task-list?pre-ordering-status=completed')
+  }
+})
+
+
+
 module.exports = router
