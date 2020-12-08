@@ -26,38 +26,39 @@
         <form action="allergens" method="post" novalidate>
 
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <fieldset class="govuk-fieldset" aria-describedby="non-mandatory-standards-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
                   Are there any non-mandatory food standards or schemes that you want the service to comply with?
                 </h1>
               </legend>
-              <div id="contact-hint" class="govuk-hint">
+
+              <p class="govuk-body">
                 Your specifcation will state that the supplier must meet mandatory government buying standards, school food standards and school food regulations.
-                </div>
-                <div id="contact-hint" class="govuk-hint">
+              </p>
+
+              <div id="non-mandatory-standards-hint" class="govuk-hint">
                 For example, red tractor assured food standards, food for life, or any charity schemes.
               </div>
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="yes" data-aria-controls="conditional-contact">
-                  <label class="govuk-label govuk-radios__label" for="contact">
+                  <input class="govuk-radios__input" id="non-mandatory-standards" name="non-mandatory-standards" type="radio" value="yes" data-aria-controls="conditional-non-mandatory-standards">
+                  <label class="govuk-label govuk-radios__label" for="non-mandatory-standards">
                     Yes
                   </label>
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-non-mandatory-standards">
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="yes">
                       Please specify
                     </label>
-                    <textarea class="govuk-textarea" id="yes" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
-                    <!-- <input class="govuk-input govuk-!-width-one-third" id="yes" name="yes" type="yes" spellcheck="false"> -->
+                    <textarea class="govuk-textarea" id="non-mandatory-standards-more-detail" name="non-mandatory-standards-more-detail" rows="5" aria-describedby="non-mandatory-standards-more-detail-hint"></textarea>
                   </div>
 
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="no" data-aria-controls="conditional-contact-2">
-                  <label class="govuk-label govuk-radios__label" for="contact-2">
+                  <input class="govuk-radios__input" id="non-mandatory-standards-2" name="non-mandatory-standards" type="radio" value="no" data-aria-controls="conditional-non-mandatory-standards-2">
+                  <label class="govuk-label govuk-radios__label" for="non-mandatory-standards-2">
                     No
                   </label>
                 </div>
