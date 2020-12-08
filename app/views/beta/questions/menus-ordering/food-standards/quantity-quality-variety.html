@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Food standards
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../../../task-list"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="../../../task-list" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Do you have any objectives around the quantity, quality or variety of food offered, beyond the mandatory standards?
+                </h1>
+              </legend>
+
+
+              <div id="contact-hint" class="govuk-hint">
+                Consider what has worked well in previous catering services, or what has not worked well that you want to avoid this time.
+                </div>
+
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      What do the mandatory standards cover?
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+
+                    <p class="govuk-body">The government's School Food Standards cover:</p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>the required quantities of different food groups</li>
+                      <li>portion sizes for different age groups</li>
+                      <li>advice on how to design menus to meet these standards</li>
+                    </ul>
+
+                  </div>
+                </details>
+
+
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="yes" data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-radios__label" for="contact">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="yes">
+                      What are the objectives?
+                    </label>
+                    <textarea class="govuk-textarea" id="yes" name="more-detail" rows="15" aria-describedby="more-detail-hint"></textarea>
+                    <!-- <input class="govuk-input govuk-!-width-one-third" id="yes" name="yes" type="yes" spellcheck="false"> -->
+                  </div>
+
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="no" data-aria-controls="conditional-contact-2">
+                  <label class="govuk-label govuk-radios__label" for="contact-2">
+                    No
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
