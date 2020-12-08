@@ -185,29 +185,61 @@
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="questions/menus-ordering/food-standards/non-mandatory-food-standards" aria-describedby="eligibility-status">
+                <a href="questions/menus-ordering/food-standards/non-mandatory-food-standards?food-standards-status=started" aria-describedby="eligibility-status">
                   Food standards
                 </a>
               </span>
+
+              {% if data['food-standards-status'] == "not-started" %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+              {% if data['food-standards-status'] == "started" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% endif %}
+              {% if data['food-standards-status'] == "completed" %}
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+              {% endif %}
+
             </li>
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="questions/menus-ordering/pre-ordering/need-way-order" aria-describedby="eligibility-status">
+                <a href="questions/menus-ordering/pre-ordering/need-way-order?pre-ordering-status=started" aria-describedby="eligibility-status">
                   Pre-ordering
                 </a>
               </span>
+
+              {% if data['pre-ordering-status'] == "not-started" %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+              {% if data['pre-ordering-status'] == "started" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% endif %}
+              {% if data['pre-ordering-status'] == "completed" %}
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+              {% endif %}
+
+
             </li>
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="questions/menus-ordering/payment-methods/payment-methods" aria-describedby="eligibility-status">
+                <a href="questions/menus-ordering/payment-methods/payment-methods?payment-methods-status=started" aria-describedby="eligibility-status">
                   Payment methods
                 </a>
               </span>
+
+              {% if data['payment-methods-status'] == "not-started" %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+              {% if data['payment-methods-status'] == "started" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% endif %}
+              {% if data['payment-methods-status'] == "completed" %}
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+              {% endif %}
+
+
             </li>
           </ul>
         </li>

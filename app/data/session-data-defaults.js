@@ -19,7 +19,9 @@ Example usage:
 
 module.exports = {
 
-  // Insert values here
+  "food-standards-status": "not-started",
+  "pre-ordering-status": "not-started",
+  "payment-methods-status": "not-started",
   answers: []
 
 }
