@@ -18,7 +18,10 @@ Example usage:
 */
 
 module.exports = {
-
+  "auxiliary-services-status": "not-started",
+  "customer-numbers-status": "not-started",
+  "service-types-times-status": "not-started",
+  "service-dates-status": "not-started",
   "food-standards-status": "not-started",
   "pre-ordering-status": "not-started",
   "payment-methods-status": "not-started",

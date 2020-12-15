@@ -23,63 +23,42 @@
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="../../../task-list?food-standards-status=completed" method="post" novalidate>
-
+        <form action="../../../task-list?service-dates-status=completed" method="post" novalidate>
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="quantity-quality-variety-hint">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  Do you have any objectives around the quantity, quality or variety of food offered, beyond the mandatory standards?
+                  When do you need the new catering service to start?
                 </h1>
               </legend>
+              <div id="catering-service-start-hint" class="govuk-hint">
+                This is the first date your supplier will need to provide catering to the school.
+              </div>
 
-
-              <div id="quantity-quality-variety-hint" class="govuk-hint">
-                Consider what has worked well in previous catering services, or what has not worked well that you want to avoid this time.
-                </div>
-
-                <details class="govuk-details" data-module="govuk-details">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      What do the mandatory standards cover?
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
-
-                    <p class="govuk-body">The government's School Food Standards cover:</p>
-
-                    <ul class="govuk-list govuk-list--bullet">
-                      <li>the required quantities of different food groups</li>
-                      <li>portion sizes for different age groups</li>
-                      <li>advice on how to design menus to meet these standards</li>
-                    </ul>
-
-                  </div>
-                </details>
-
-
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="quantity-quality-variety" name="quantity-quality-variety" type="radio" value="yes" data-aria-controls="conditional-quantity-quality-variety">
-                  <label class="govuk-label govuk-radios__label" for="quantity-quality-variety">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-quantity-quality-variety">
+              <div id="passport-issued-hint" class="govuk-hint">
+                For example, 1 9 2021
+              </div>
+              <div class="govuk-date-input" id="passport-issued">
+                <div class="govuk-date-input__item">
                   <div class="govuk-form-group">
-                    <label class="govuk-label" for="yes">
-                      What are the objectives?
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      Day
                     </label>
-                    <textarea class="govuk-textarea" id="yes" name="more-detail" rows="15" aria-describedby="more-detail-hint"></textarea>
-                    <!-- <input class="govuk-input govuk-!-width-one-third" id="yes" name="yes" type="yes" spellcheck="false"> -->
-                  </div>
-
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                 </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="quantity-quality-variety-2" name="quantity-quality-variety" type="radio" value="no" data-aria-controls="conditional-quantity-quality-variety-2">
-                  <label class="govuk-label govuk-radios__label" for="quantity-quality-variety-2">
-                    No
-                  </label>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                 </div>
               </div>
 

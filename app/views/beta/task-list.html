@@ -142,38 +142,78 @@
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="eligibility-status">
+                <a href="questions/service-parameters/service-dates/when-end?service-dates-status=started" aria-describedby="eligibility-status">
                   Service dates
                 </a>
               </span>
+
+              {% if data['service-dates-status'] == "not-started" %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+              {% if data['service-dates-status'] == "started" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% endif %}
+              {% if data['service-dates-status'] == "completed" %}
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+              {% endif %}
+
             </li>
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="read-declaration-status">
+                <a href="questions/service-parameters/service-types-times/which-current-times?service-types-times-status=started" aria-describedby="read-declaration-status">
                   Service types and times
                 </a>
               </span>
+
+              {% if data['service-types-times-status'] == "not-started" %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+              {% if data['service-types-times-status'] == "started" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% endif %}
+              {% if data['service-types-times-status'] == "completed" %}
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+              {% endif %}
+
             </li>
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="read-declaration-status">
+                <a href="questions/service-parameters/customer-numbers/which-year-groups?customer-numbers-status=started" aria-describedby="read-declaration-status">
                   Customer numbers
                 </a>
               </span>
+
+              {% if data['customer-numbers-status'] == "not-started" %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+              {% if data['customer-numbers-status'] == "started" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% endif %}
+              {% if data['customer-numbers-status'] == "completed" %}
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+              {% endif %}
+
             </li>
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="read-declaration-status">
+                <a href="questions/service-parameters/service-types-times/which-current-times?auxiliary-services-status=started" aria-describedby="read-declaration-status">
                   Auxillary services
                 </a>
               </span>
+
+              {% if data['auxiliary-services-status'] == "not-started" %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+              {% if data['auxiliary-services-status'] == "started" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% endif %}
+              {% if data['auxiliary-services-status'] == "completed" %}
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+              {% endif %}
+
             </li>
           </ul>
         </li>
