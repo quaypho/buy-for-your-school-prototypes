@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Food standards
+  Auxiliary services
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,34 +27,44 @@
         <form action="supplier-provide-vending" method="post" novalidate>
 
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="have-way-order-hint">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  Do you currently have a way for pupils to pre-order meals?
+                  Which of the following occasional catering services do you need?
                 </h1>
               </legend>
-
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="have-way-order" name="have-way-order" type="radio" value="yes" data-aria-controls="conditional-have-way-order">
-                  <label class="govuk-label govuk-radios__label" for="have-way-order">
-                    Yes
+              <div id="waste-hint" class="govuk-hint">
+                Select all that apply.
+              </div>
+              <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste">
+                    Packed lunches for trips – of equivalent nutritional value to hot meals
                   </label>
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-have-way-order">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="yes">
-                      Briefly describe your pre-ordering process.
-                    </label>
-                    <textarea class="govuk-textarea" id="yes" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
-                    <!-- <input class="govuk-input govuk-!-width-one-third" id="yes" name="yes" type="yes" spellcheck="false"> -->
-                  </div>
-
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                    Catering for staff and governor meetings
+                  </label>
                 </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="have-way-order-2" name="have-way-order" type="radio" value="no" data-aria-controls="conditional-have-way-order-2">
-                  <label class="govuk-label govuk-radios__label" for="have-way-order-2">
-                    No
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                    Catering for staff events and training days
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                    Catering for parents evenings
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                    None of the above
                   </label>
                 </div>
               </div>

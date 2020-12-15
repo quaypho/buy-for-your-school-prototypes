@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Food standards
+  Auxiliary services
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,39 +27,11 @@
         <form action="../../../task-list?auxiliary-services-status=completed" method="post" novalidate>
 
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="have-way-order-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                  Do you currently have a way for pupils to pre-order meals?
-                </h1>
-              </legend>
-
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="have-way-order" name="have-way-order" type="radio" value="yes" data-aria-controls="conditional-have-way-order">
-                  <label class="govuk-label govuk-radios__label" for="have-way-order">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-have-way-order">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="yes">
-                      Briefly describe your pre-ordering process.
-                    </label>
-                    <textarea class="govuk-textarea" id="yes" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
-                    <!-- <input class="govuk-input govuk-!-width-one-third" id="yes" name="yes" type="yes" spellcheck="false"> -->
-                  </div>
-
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="have-way-order-2" name="have-way-order" type="radio" value="no" data-aria-controls="conditional-have-way-order-2">
-                  <label class="govuk-label govuk-radios__label" for="have-way-order-2">
-                    No
-                  </label>
-                </div>
-              </div>
-
-            </fieldset>
+            <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
+                What food and drink do you need to be provided in vending machines?
+              </label>
+            </h1>
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
 
           <button class="govuk-button" data-module="govuk-button">

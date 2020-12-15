@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Food standards
+  Auxiliary services
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,14 +24,31 @@
         <form action="what-food-vending" method="post" novalidate>
 
           <div class="govuk-form-group">
-            <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="pre-ordering-more-detail">
-              How well does your pre-ordering process work?
-            </label>
-          </h1>
-          <div id="pre-ordering-more-detail-hint" class="govuk-hint">
-            Include any information about how well the process currently works for the school, pupils and parents.
-          </div>
-          <textarea class="govuk-textarea" id="pre-ordering-more-detail" name="pre-ordering-more-detail" rows="5" aria-describedby="pre-ordering-more-detail-hint"></textarea>
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Do you have any preferences for the food and drink supplied in vending machines?
+                </h1>
+              </legend>
+              <div id="waste-hint" class="govuk-hint">
+                We'll automatically add to your specification that food and drink provided must meet food standards and regulations.
+              </div>
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="need-way-order" name="need-way-order" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="need-way-order">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="need-way-order-2" name="need-way-order" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="need-way-order-2">
+                    No
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
           </div>
 
           <button class="govuk-button" data-module="govuk-button">
