@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Food standards
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "have-way-order"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="../../../task-list?pre-ordering-status=completed" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="pre-ordering-more-detail">
+              How well does your pre-ordering process work?
+            </label>
+          </h1>
+          <div id="pre-ordering-more-detail-hint" class="govuk-hint">
+            Include any information about how well the process currently works for the school, pupils and parents.
+          </div>
+          <textarea class="govuk-textarea" id="pre-ordering-more-detail" name="pre-ordering-more-detail" rows="5" aria-describedby="pre-ordering-more-detail-hint"></textarea>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
