@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Timescales
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "what-buying"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="budget" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+               <h1 class="govuk-fieldset__heading">
+                 What are your timescales?
+               </h1>
+             </legend>
+             <div class="govuk-radios">
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="timescales" name="timescales" type="radio" value="Less than 1 month">
+                 <label class="govuk-label govuk-radios__label" for="timescales">
+                   Less than 1 month
+                 </label>
+               </div>
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="timescales-2" name="timescales" type="radio" value="Longer than 12 months">
+                 <label class="govuk-label govuk-radios__label" for="timescales-2">
+                   Longer than 12 months
+                 </label>
+               </div>
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="timescales-3" name="timescales" type="radio" value="Between 1 and 12 months">
+                 <label class="govuk-label govuk-radios__label" for="timescales-3">
+                   Between 1 and 12 months
+                 </label>
+               </div>
+             </div>
+
+           </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

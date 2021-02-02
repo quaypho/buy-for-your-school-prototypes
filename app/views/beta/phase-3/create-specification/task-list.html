@@ -1,0 +1,324 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+  {{ govukBackLink({
+    text: "Back to dashboard",
+    href: "dashboard"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Buy for {{data['school-name']}}
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Specification incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 18 sections.</p>
+
+
+      <ol class="app-task-list">
+
+
+
+
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Catering objectives
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  What you'll need for this section
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Procurements goals
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Food policy (health, wellbeing, education and values)
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Social value
+          </h2>
+          <ul class="app-task-list__items">
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Environment
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Modern slavery
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Contract management
+          </h2>
+          <ul class="app-task-list__items">
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Service review
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Contract costs
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Operational overheads
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Staff
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Service parameters
+          </h2>
+          <ul class="app-task-list__items">
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="questions/service-parameters/service-dates/when-end?service-dates-status=started" aria-describedby="eligibility-status">
+                  Service dates
+                </a>
+              </span>
+
+              {% if data['service-dates-status'] == "not-started" %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+              {% if data['service-dates-status'] == "started" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% endif %}
+              {% if data['service-dates-status'] == "completed" %}
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+              {% endif %}
+
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="questions/service-parameters/service-types-times/which-current-times?service-types-times-status=started" aria-describedby="read-declaration-status">
+                  Service types and times
+                </a>
+              </span>
+
+              {% if data['service-types-times-status'] == "not-started" %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+              {% if data['service-types-times-status'] == "started" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% endif %}
+              {% if data['service-types-times-status'] == "completed" %}
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+              {% endif %}
+
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="questions/service-parameters/customer-numbers/which-year-groups?customer-numbers-status=started" aria-describedby="read-declaration-status">
+                  Customer numbers
+                </a>
+              </span>
+
+              {% if data['customer-numbers-status'] == "not-started" %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+              {% if data['customer-numbers-status'] == "started" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% endif %}
+              {% if data['customer-numbers-status'] == "completed" %}
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+              {% endif %}
+
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="questions/service-parameters/auxiliary-services/which-occassional-need?auxiliary-services-status=started" aria-describedby="read-declaration-status">
+                  Auxillary services
+                </a>
+              </span>
+
+              {% if data['auxiliary-services-status'] == "not-started" %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+              {% if data['auxiliary-services-status'] == "started" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% endif %}
+              {% if data['auxiliary-services-status'] == "completed" %}
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+              {% endif %}
+
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">5. </span> Menus and ordering
+          </h2>
+          <ul class="app-task-list__items">
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="questions/menus-ordering/food-standards/non-mandatory-food-standards?food-standards-status=started" aria-describedby="eligibility-status">
+                  Food standards
+                </a>
+              </span>
+
+              {% if data['food-standards-status'] == "not-started" %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+              {% if data['food-standards-status'] == "started" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% endif %}
+              {% if data['food-standards-status'] == "completed" %}
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+              {% endif %}
+
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="questions/menus-ordering/pre-ordering/need-way-order?pre-ordering-status=started" aria-describedby="eligibility-status">
+                  Pre-ordering
+                </a>
+              </span>
+
+              {% if data['pre-ordering-status'] == "not-started" %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+              {% if data['pre-ordering-status'] == "started" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% endif %}
+              {% if data['pre-ordering-status'] == "completed" %}
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+              {% endif %}
+
+
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="questions/menus-ordering/payment-methods/payment-methods?payment-methods-status=started" aria-describedby="eligibility-status">
+                  Payment methods
+                </a>
+              </span>
+
+              {% if data['payment-methods-status'] == "not-started" %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+              {% if data['payment-methods-status'] == "started" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% endif %}
+              {% if data['payment-methods-status'] == "completed" %}
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+              {% endif %}
+
+
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">6. </span> Facilities
+          </h2>
+          <ul class="app-task-list__items">
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Catering spaces
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Equipment
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Cleaning
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+{% endblock %}

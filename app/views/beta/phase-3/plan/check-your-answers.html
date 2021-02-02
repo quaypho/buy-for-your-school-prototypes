@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="eligibility-questions/procurement-objectives">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers before continuing</h1>
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type of school
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{data['school-type']}}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="eligibility-questions/school-type">
+              Change
+              <span class="govuk-visually-hidden"> type of school</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What are you buying
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{data['what-buying']}}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="eligibility-questions/what-buying">
+              Change
+              <span class="govuk-visually-hidden"> what you're buying</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Timescales
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{data['timescales']}}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="eligibility-questions/timescales">
+              Change
+              <span class="govuk-visually-hidden"> timescales</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Budget
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{data['budget']}}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="eligibility-questions/budget">
+              Change
+              <span class="govuk-visually-hidden"> budget</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Procurement objectives
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{data['procurement-objectives']}}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="eligibility-questions/procurement-objectives">
+              Change
+              <span class="govuk-visually-hidden"> procurement objectives</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <!-- <h2 class="govuk-heading-m">After checking your answers</h2> -->
+
+      <p class="govuk-body">The following page contains a plan based on the answers you gave,  that you can use to complete your procurement.</p>
+
+      <form action="step-by-step" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

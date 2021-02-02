@@ -1,0 +1,163 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Food standards
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../../../task-list"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="which-use-services" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Which of the following year groups does your school have?
+                </h1>
+              </legend>
+              <div id="waste-hint" class="govuk-hint">
+                Select all that apply.
+              </div>
+
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment" name="payment" type="checkbox" value="email" data-aria-controls="conditional-payment">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment">
+                    Nursery
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-2" name="payment2" type="checkbox" value="phone" data-aria-controls="conditional-payment-2">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-2">
+                    Reception
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-3" name="payment3" type="checkbox" value="text message" data-aria-controls="conditional-payment-3">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-3">
+                    Year 1
+                  </label>
+                </div>
+
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-4" name="payment4" type="checkbox" value="text message" data-aria-controls="conditional-payment-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-4">
+                    Year 2
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-4" name="payment4" type="checkbox" value="text message" data-aria-controls="conditional-payment-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-4">
+                    Year 3
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-4" name="payment4" type="checkbox" value="text message" data-aria-controls="conditional-payment-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-4">
+                    Year 4
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-4" name="payment4" type="checkbox" value="text message" data-aria-controls="conditional-payment-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-4">
+                    Year 5
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-4" name="payment4" type="checkbox" value="text message" data-aria-controls="conditional-payment-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-4">
+                    Year 6
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-4" name="payment4" type="checkbox" value="text message" data-aria-controls="conditional-payment-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-4">
+                    Year 7
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-4" name="payment4" type="checkbox" value="text message" data-aria-controls="conditional-payment-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-4">
+                    Year 8
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-4" name="payment4" type="checkbox" value="text message" data-aria-controls="conditional-payment-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-4">
+                    Year 9
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-4" name="payment4" type="checkbox" value="text message" data-aria-controls="conditional-payment-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-4">
+                    Year 10
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-4" name="payment4" type="checkbox" value="text message" data-aria-controls="conditional-payment-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-4">
+                    Year 11
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-4" name="payment4" type="checkbox" value="text message" data-aria-controls="conditional-payment-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-4">
+                    Year 12
+                  </label>
+                </div>
+
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-5" name="payment5" type="checkbox" value="text message" data-aria-controls="conditional-payment-5">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-5">
+                    Sixth form
+                  </label>
+                </div>
+
+
+
+
+              </div>
+
+
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

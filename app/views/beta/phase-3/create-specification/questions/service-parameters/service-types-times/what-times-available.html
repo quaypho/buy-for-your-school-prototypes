@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Service dates
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "have-way-order"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="describe-other" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  At what times are these services normally available?
+                </h1>
+              </legend>
+              <div id="passport-issued-hint" class="govuk-hint">
+                These times should reflect your current timetables. You may review these with the supplier later.
+              </div>
+
+              <div class="govuk-date-input govuk-!-padding-bottom-6" id="passport-issued">
+                <h2 class="govuk-heading-s">
+                  Breakfast
+                </h2>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      From
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-3" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      To
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-3" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                </div>
+              </div>
+
+
+              <div class="govuk-date-input govuk-!-padding-bottom-6" id="passport-issued">
+                <h2 class="govuk-heading-s">
+                  Lunch
+                </h2>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      From
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-3" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      To
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-3" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                </div>
+              </div>
+
+
+              <div class="govuk-date-input govuk-!-padding-bottom-6" id="passport-issued">
+                <h2 class="govuk-heading-s">
+                  Other - outside of meal times
+                </h2>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      From
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-3" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      To
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-3" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

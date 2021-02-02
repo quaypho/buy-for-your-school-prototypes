@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  School type
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../start"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="what-buying" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+               <h1 class="govuk-fieldset__heading">
+                 What type of school are you procuring for?
+               </h1>
+             </legend>
+             <div class="govuk-radios">
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="school-type" name="school-type" type="radio" value="Primary">
+                 <label class="govuk-label govuk-radios__label" for="school-type">
+                   Primary
+                 </label>
+               </div>
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="school-type-2" name="school-type" type="radio" value="Secondary">
+                 <label class="govuk-label govuk-radios__label" for="school-type-2">
+                   Secondary
+                 </label>
+               </div>
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="school-type-3" name="school-type" type="radio" value="Academy">
+                 <label class="govuk-label govuk-radios__label" for="school-type-3">
+                   Academy
+                 </label>
+               </div>
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="school-type-4" name="school-type" type="radio" value="Local authority maintained">
+                 <label class="govuk-label govuk-radios__label" for="school-type-4">
+                   Local authority maintained
+                 </label>
+               </div>
+             </div>
+
+           </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
