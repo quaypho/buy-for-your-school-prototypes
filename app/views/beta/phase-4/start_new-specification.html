@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a new specification
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "dashboard"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Create a specification to procure a catering service for your school
+      </h1>
+
+      <p>This tool will help you to create a specification for a single school.</p>
+      <p>A specification is a document which provides details about what your school wants a supplier to provide as part of a catering service.</p>
+      <p>You can share the specification with suppliers to help them understand what the school wants to achieve.</p>
+      <p>Suppliers can use this information to decide whether they are able to provide the service and if they are interested in working with your school.</p>
+      <p>This service will guide you to provide your requirements for a new service. It will also automatically include standard requirements that all school catering suppliers must meet.</p>
+      <p>You will be able to download an editable specification at the end of this tool.</p>
+
+
+       <a href="new-spec-questions/school-name" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
+             Start now
+             <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+               <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+      </svg></a>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You may find it useful to read the:</p>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>school food standards</li>
+      <li>school food regulations</li>
+      <li>Transfer of Undertakings (Protection of Employment) regulations (TUPE)</li>
+      <li>health and Safety legislation</li>
+      </ul>
+
+
+
+    </div>
+
+
+  </div>
+{% endblock %}

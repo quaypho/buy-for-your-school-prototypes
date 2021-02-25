@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Create a specification to procure a catering service for your school
+      </h1>
+
+            <p>Use this service to create a specification for a new catering service for a single school in England.</p>
+
+            <h2 class="govuk-heading-m">Who it’s for</h2>
+
+            <p class="govuk-body">You can use this service to create a specification document that can be used when <a href="plan/plan-catering-procurement" class="govuk-link">procuring your own catering service</a> for one school, either:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>a local authority maintained school, or</li>
+              <li>one academy in a single or multi-academy trust</li>
+            </ul>
+
+            <p class="govuk-body">You currently cannot use this service to create a specification for:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>any other service outside of catering</li>
+              <li>goods, supplies or equipment only</li>
+              <li>multiple schools at the same time</li>
+            </ul>
+
+            <h2 class="govuk-heading-m">How it works</h2>
+
+            <p class="govuk-body">Use this service to create a document that:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>describes the service your school is looking for</li>
+              <li>collates all the information that any suppliers interested in your contract need to know</li>
+              <li>includes all the standard regulations and requirements that school catering suppliers must comply with – we’ll add these automatically for you, you do not need to know what these are</li>
+            </ul>
+
+            <p class="govuk-body">You will be able to download the specification that you create.</p>
+            <p class="govuk-body">Information you input is saved securely.</p>
+            <p class="govuk-body">You can pause and resume your specification at any time.</p>
+
+
+            <a href="dashboard" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+              Start
+              <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+                <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+              </svg>
+            </a>
+
+    </div>
+  </div>
+{% endblock %}

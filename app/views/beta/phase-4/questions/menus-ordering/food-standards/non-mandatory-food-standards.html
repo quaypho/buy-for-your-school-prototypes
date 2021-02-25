@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Food standards
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../../../task-list"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="allergens" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="non-mandatory-standards-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Are there any non-mandatory food standards or schemes that you want the service to comply with?
+                </h1>
+              </legend>
+
+              <p class="govuk-body">
+                Your specifcation will state that the supplier must meet mandatory government buying standards, school food standards and school food regulations.
+              </p>
+
+              <div id="non-mandatory-standards-hint" class="govuk-hint">
+                For example, red tractor assured food standards, food for life, or any charity schemes.
+              </div>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="non-mandatory-standards" name="non-mandatory-standards" type="radio" value="yes" data-aria-controls="conditional-non-mandatory-standards">
+                  <label class="govuk-label govuk-radios__label" for="non-mandatory-standards">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-non-mandatory-standards">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="yes">
+                      Please specify
+                    </label>
+                    <textarea class="govuk-textarea" id="non-mandatory-standards-more-detail" name="non-mandatory-standards-more-detail" rows="5" aria-describedby="non-mandatory-standards-more-detail-hint"></textarea>
+                  </div>
+
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="non-mandatory-standards-2" name="non-mandatory-standards" type="radio" value="no" data-aria-controls="conditional-non-mandatory-standards-2">
+                  <label class="govuk-label govuk-radios__label" for="non-mandatory-standards-2">
+                    No
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

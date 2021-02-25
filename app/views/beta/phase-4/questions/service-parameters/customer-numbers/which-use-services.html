@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Food standards
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../../../task-list"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="how-many-use-services" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Which payment methods do you need pupils to be able to use to pay for food?
+                </h1>
+              </legend>
+              <div id="waste-hint" class="govuk-hint">
+                This will apply to any tills, vending machines or other pay points operated by the supplier.
+              </div>
+
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment" name="payment" type="checkbox" value="email" data-aria-controls="conditional-payment">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment">
+                    Pre-paid card linked to school account
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-2" name="payment2" type="checkbox" value="phone" data-aria-controls="conditional-payment-2">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-2">
+                    Fingerprint scan linked to school account
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-3" name="payment3" type="checkbox" value="text message" data-aria-controls="conditional-payment-3">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-3">
+                    Cash
+                  </label>
+                </div>
+
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-4" name="payment4" type="checkbox" value="text message" data-aria-controls="conditional-payment-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-4">
+                    Chip and pin card
+                  </label>
+                </div>
+
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-5" name="payment5" type="checkbox" value="text message" data-aria-controls="conditional-payment-5">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-5">
+                    Contactless card
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payment-6" name="payment6" type="checkbox" value="text message" data-aria-controls="conditional-payment-6">
+                  <label class="govuk-label govuk-checkboxes__label" for="payment-6">
+                    Other
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-payment-6">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="payment-other">
+                      Please specify
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-third" id="payment-by-text" name="payment-other" type="text"></div>
+
+                </div>
+
+              </div>
+
+
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

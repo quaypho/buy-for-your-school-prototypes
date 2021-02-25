@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a new specification
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "school-type"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-panel govuk-panel--interruption">
+
+          <h1 class="govuk-heading-l" id="start_new_claim">
+            Continue to start creating your specification
+          </h1>
+
+          <p class="govuk-body">You told us:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>you are procuring for {{data['school-name']}}</li>
+            <li>{{data['type-of-school']}}</li>
+          </ul>
+
+          <p class="govuk-body">In the next step, you’ll see a list of tasks you’ll need to complete to create your specification.
+          <br>
+          You can start, stop and return to the tasks at any time. Your progress will be saved.</p>
+
+          <a class="govuk-button" href="../task-list">Continue</a>
+          <br>
+          <a class="govuk-link" href="../dashboard">Cancel and go back to the dashboard</a>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
