@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div style="background: SteelBlue" class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+
+    <h1 class="govuk-heading-xl" h1 style= "color:white;">Get help buying for schools</h1>
+    <p style= "color:white;">From: Department for Education<br>
+    Published: 2 February 2016<br>
+    Updated:22 April 2021, see all updates</p>
+  </div>
+</div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-caption-l govuk-!-margin-bottom-4">4. Create a specification for your school</h2>
+    
+      <div class="app-interruption-card govuk-!-padding-5 govuk-!-margin-bottom-5">
+        <p class="govuk-!-margin-0">Use the <a href="#">Create a specification</a> service to build a specification that automatically includes mandatory standards and tells suppliers what you need them to know.</p>
+      </div>
+</div>
+
+<div class="govuk-grid-column-full">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+    {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+            text: "What is a specification used for?"
+          },
+          content: {
+            html: "<p>A specification is a document that explains to potential suppliers the goods or services that your school needs.</p>
+
+            <p>Depending on the procurement process you follow, you will share your specification at some point before choosing your preferred supplier. Suppliers may use this to decide:</p>
+
+
+            <ul class=\"govuk-list govuk-list--bullet\">
+              <li>whether to bid for a contract</li>
+              <li>what to include and focus on in their proposal</li>
+              <li>the scale of the goods or services you need</li>
+              <li>how well suited they are to working with your school</li>
+            </ul>
+            "
+          }
+        },
+        {
+          heading: {
+            text: "Consider what suppliers need to know"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for Consider what suppliers need to know.</p>"
+          }
+        },
+          {
+          heading: {
+            text: "Focus on outcomes"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for Focus on outcomes.</p>"
+          }
+        },
+          {
+          heading: {
+            text: "Think about the long term"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for Think about the long term.</p>"
+          }
+        }
+      ]
+    }) }}
+ </div>
+
+ <!--right hand column starts-->
+ <div class="govuk-grid-column-one-third">
+   <!--empty-->
+ </div>
+</div>
+    </div>
+  </div>
+{% endblock %}
