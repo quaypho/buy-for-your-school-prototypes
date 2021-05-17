@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div style="background: SteelBlue" class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+
+    <h1 class="govuk-heading-xl" h1 style= "color:white;">Get help buying for schools</h1>
+    <p style= "color:white;">From: Department for Education<br>
+    Published: 2 February 2016<br>
+    Updated:22 April 2021, see all updates</p>
+  </div>
+</div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-caption-l govuk-!-margin-bottom-4">Get at least 3 quotes from suppliers, step by step</h2>
+    <p>A different procurement process may be suitable for your needs. Check this is the right process for you by <a href="#">Finding the right procurement process</a>.</p>
+    <p>Before you complete these steps, you should have already:
+</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="#">Understood your school's needs</a></li>
+      <li><a href="#">Created your specification</a></li>
+    </ul>
+</div>
+
+<div class="govuk-grid-column-full">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+    {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+            text: "1. Find a framework"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for 1. Find a framework.</p>"
+          }
+        },
+        {
+          heading: {
+            text: "2. Ask suppliers to submit an expression of interest"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for 2. Ask suppliers to submit an expression of interest.</p>"
+          }
+        },
+          {
+          heading: {
+            text: "3. Prepare and send an invitation to tender"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for 3. Prepare and send an invitation to tender.</p>"
+          }
+        },
+          {
+          heading: {
+            text: "4. Evaluate and decide on the winning bid"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for 4. Evaluate and decide on the winning bid.</p>"
+          }
+        },
+          {
+          heading: {
+            text: "5. Respond to challenges from unsuccessful bidders"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for 5. Respond to challenges from unsuccessful bidders.</p>"
+          }
+        },
+          {
+          heading: {
+            text: "6. Award the contract"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for 6. Award the contract.</p>"
+          }
+        }
+      ]
+    }) }}
+ </div>
+
+ <!--right hand column starts-->
+ <div class="govuk-grid-column-one-third">
+   <!--empty-->
+ </div>
+</div>
+    </div>
+  </div>
+{% endblock %}

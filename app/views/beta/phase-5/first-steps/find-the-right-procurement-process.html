@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div style="background: SteelBlue" class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+
+    <h1 class="govuk-heading-xl" h1 style= "color:white;">Get help buying for schools</h1>
+    <p style= "color:white;">From: Department for Education<br>
+    Published: 2 February 2016<br>
+    Updated:22 April 2021, see all updates</p>
+  </div>
+</div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-caption-l govuk-!-margin-bottom-4">3. Find the right procurement process</h2>
+    <p>You'll need to know:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>The estimated cost of the goods or lifetime of the contract - <a href="#">get help estimating the lifetime cost</a></li>
+      <li>The date you need to have the goods or when the new service needs to start</li>
+      <li>How much capacity you or your team has to work on the procurement</li>
+      <li>An understanding of <a href="#">what your school needs</a> and what your objectives are</li>
+    </ul>
+</div>
+
+<div class="govuk-grid-column-full">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+    {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+            text: "What are DfE framework agreements?"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for What are DfE framework agreements?.</p>"
+          }
+        },
+        {
+          heading: {
+            text: "When to use a framework agreement"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for When to use a framework agreement.</p>"
+          }
+        },
+          {
+          heading: {
+            text: "When to find at least 3 suppliers to get a quote"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for When to find at least 3 suppliers to get a quote.</p>"
+          }
+        },
+          {
+          heading: {
+            text: "When to advertise your contract and run a procurement process"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for When to advertise your contract and run a procurement process.</p>"
+          }
+        },
+          {
+          heading: {
+            text: "When to run an EU compliant procurement process"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for When to run an EU compliant procurement process.</p>"
+          }
+        }
+      ]
+    }) }}
+ </div>
+
+ <!--right hand column starts-->
+ <div class="govuk-grid-column-one-third">
+   <!--empty-->
+ </div>
+</div>
+    </div>
+  </div>
+{% endblock %}

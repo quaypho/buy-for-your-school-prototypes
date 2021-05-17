@@ -21,3 +21,6 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/interrupt-card";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+.app-interruption-card {
+	background-color: govuk-colour("light-grey");
+}

@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div style="background: SteelBlue" class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+
+    <h1 class="govuk-heading-xl" h1 style= "color:white;">Get help buying for schools</h1>
+    <p style= "color:white;">From: Department for Education<br>
+    Published: 2 February 2016<br>
+    Updated:22 April 2021, see all updates</p>
+  </div>
+</div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-caption-l">2. Understand your school's needs for a procurement</h2>
+    <p>
+</div>
+
+<div class="govuk-grid-column-full">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+    {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+            text: "Establish your procurement objectives"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for Establish your procurement objectives.</p>"
+          }
+        },
+        {
+          heading: {
+            text: "Identify what suppliers will need to know"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for Identify what suppliers will need to know.</p>"
+          }
+        },
+          {
+          heading: {
+            text: "Check what different suppliers can offer"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for Check what different suppliers can offer.</p>"
+          }
+        },
+          {
+          heading: {
+            text: "Identify who you need to speak to"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for Identify who you need to speak to.</p>"
+          }
+        },
+          {
+          heading: {
+            text: "Consider organising a focus group"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for Consider organising a focus group.</p>"
+          }
+        }
+      ]
+    }) }}
+ </div>
+
+ <!--right hand column starts-->
+ <div class="govuk-grid-column-one-third">
+   <!--empty-->
+ </div>
+</div>
+    </div>
+  </div>
+{% endblock %}

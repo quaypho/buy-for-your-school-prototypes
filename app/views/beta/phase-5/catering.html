@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div style="background: SteelBlue" class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+
+    <h1 class="govuk-heading-xl" h1 style= "color:white;">Get help buying for schools</h1>
+    <p style= "color:white;">From: Department for Education<br>
+    Published: 2 February 2016<br>
+    Updated:22 April 2021, see all updates</p>
+  </div>
+</div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-caption-l govuk-!-margin-bottom-4">Things to consider when procuring catering services</h2>
+    
+      <div class="app-interruption-card govuk-!-padding-5 govuk-!-margin-bottom-5">
+        <p class="govuk-!-margin-0">Use this information alongside the relevant <a href="#">steps of the procurement process</a>.</p>
+      </div>
+</div>
+
+<div class="govuk-grid-column-full">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+    {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+            text: "When finding the right procurement process"
+          },
+          content: {
+            html: "<p>When you're <a href=\"#\">finding the right procurement process to follow</a>, you'll need to consider things like how much you're spending and how much time you have.</p>
+
+            <h3 class=\"govuk-heading-s\">Lifetime cost of the catering contract</h3>
+
+            <p>Catering contracts usually last 3 to 5 years, but that can vary. It's unlikely that the lifetime cost of the service will be low enough for you to choose a single supplier directly from a framework. You'll probably need to get at least 3 quotes, advertise a contract and run a procurement process, or run an EU compliant procurement process.</p>
+
+            <p>There is <a href=\"#\">1 catering services framework</a> available that you can use to run a mini competition, which involves asking 3 suppliers on the framework to quote.</p>
+
+            <h3 class=\"govuk-heading-s\">Time needed to run a catering procurement</h3>
+
+            <p>When deciding your process, consider how much time you have to spend on the procurement. For example, running a compliant procurement process for catering can take around 6 months for a person or team with enough time to work on the procurement most days. Running your own procurement can also be a complex process, with a lot of different things to consider, but there is additional support available alongside this manual if you get stuck.</p>"
+          }
+        },
+        {
+          heading: {
+            text: "When understanding your school's needs"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for When understanding your school's needs.</p>"
+          }
+        },
+          {
+          heading: {
+            text: "When creating your specification"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for When creating your specification.</p>"
+          }
+        },
+          {
+          heading: {
+            text: "If you need to define award criteria"
+          },
+          content: {
+            html: "<p class='govuk-body'>This step is relevant to the following procurement processes:</p>
+
+            <ul class=\"govuk-list govuk-list--bullet\">
+              <li><a href=\"#\">Running a mini competition from a framework</a></li>
+              <li><a href=\"#\">Getting at least 3 quotes from suppliers</a></li>
+              <li><a href=\"#\">Advertising a contract and running a procurement process</a></li>
+              <li><a href=\"#\">Running a compliant procurement process</a></li>
+            </ul>
+
+            <p class='govuk-body'>This step is NOT relevant to:</p>
+
+            <ul class=\"govuk-list govuk-list--bullet\">
+              <li><a href=\"#\">Choosing a supplier from a framework</a></li>
+            </ul>
+            </p>"
+          }
+        },
+          {
+          heading: {
+            text: "If you need to prepare an invitation to tender"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for If you need to prepare an invitation to tender.</p>"
+          }
+        }
+      ]
+    }) }}
+ </div>
+
+ <!--right hand column starts-->
+ <div class="govuk-grid-column-one-third">
+   <!--empty-->
+ </div>
+</div>
+    </div>
+  </div>
+{% endblock %}
