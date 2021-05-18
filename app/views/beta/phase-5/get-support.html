@@ -16,7 +16,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <div style="background: SteelBlue" class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+    <div style="background: SteelBlue" class="govuk-!-padding-6">
 
     <h1 class="govuk-heading-xl" h1 style= "color:white;">Get help buying for schools</h1>
     <p style= "color:white;">From: Department for Education<br>
@@ -25,6 +25,16 @@
   </div>
 </div>
 </div>
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Contents",
+      href: "./"
+    }
+  ]
+}) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
